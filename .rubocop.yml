@@ -1,0 +1,89 @@
+inherit_from: .rubocop_todo.yml
+
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - 'bin/**'
+
+Rails/Output:
+  Exclude:
+    - 'db/**/*'
+
+Style/IndentationWidth:
+  Width: 4
+  Exclude:
+    - 'db/**/*'
+
+Style/Tab:
+  Exclude:
+    - 'db/**/*'
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/AlignParameters:
+  EnforcedStyle: with_first_parameter
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+# Copied from rubocop_todo.yml
+# Things we can not / want not support until now
+
+# Offense count: 289
+Metrics/AbcSize:
+  Max: 1000
+
+# Offense count: 16
+Metrics/BlockNesting:
+  Max: 7
+
+# Offense count: 36
+# Configuration parameters: CountComments.
+Metrics/ClassLength:
+  Max: 1500
+
+# Offense count: 116
+Metrics/CyclomaticComplexity:
+  Max: 200
+
+# Offense count: 308
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 1000
+
+# Offense count: 4
+# Configuration parameters: CountComments.
+Metrics/ModuleLength:
+  Max: 1000
+
+# Offense count: 104
+Metrics/PerceivedComplexity:
+  Max: 100
+
+# Offense count: 371
+Style/Documentation:
+  Enabled: false
+
+# Offense count: 134
+# Cop supports --auto-correct.
+Style/RescueModifier:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericPredicate:
+  EnforcedStyle: predicate
