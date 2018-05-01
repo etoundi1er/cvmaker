@@ -1,24 +1,7 @@
-# README
+# CV Maker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple ruby on rails app to create your CV.
 
-Things you may want to cover:
+You have *templates* and the data is saved Postgres Database.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Feel free to use however you see fit.
