@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'devise'
+gem 'pdfkit'
 
 group :development, :test do
     gem 'rubocop', '~>0.52.1', require: false
