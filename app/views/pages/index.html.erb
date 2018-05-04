@@ -1,5 +1,28 @@
-<h1>Welcome</h1>
+<div class="homapage text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Simple CV Maker</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <%= link_to 'Home', root_path, class: 'nav-link active' %>
+                    <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+                    <%= link_to 'Create My CV', new_user_registration_path, class: 'nav-link' %>
+                </nav>
+            </div>
+        </header>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit consequatur veritatis eveniet incidunt ab assumenda dolorum, minima nulla sequi autem dolores voluptas velit, suscipit enim nisi provident esse magni libero.</p>
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Simple CV Maker.</h1>
+            <p class="lead">A simple app that create and manage your CVs. Export them as PDF</p>
+            <p class="lead">
+                <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-lg btn-secondary' %>
+            </p>
+        </main>
 
-this text is off context
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Simple CV Maker by <%= link_to '@etoundi1er', 'twitter.com/etoundi1er' %></p>
+            </div>
+        </footer>
+    </div>
+</div>

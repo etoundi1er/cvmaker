@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV Maker by Frank Etoundi</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+    <div class="homapage text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Simple CV Maker</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                        <%= link_to 'Home', root_path, class: 'nav-link active' %>
+                        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+                        <%= link_to 'Create My CV', new_user_registration_path, class: 'nav-link' %>
+                    </nav>
+                </div>
+            </header>
+
+            <main role="main">
+                <%= yield %>
+            </main>
+
+            <footer class="mastfoot mt-auto">
+                <div class="inner">
+                    <p>Simple CV Maker by <%= link_to '@etoundi1er', 'twitter.com/etoundi1er' %></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
