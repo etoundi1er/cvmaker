@@ -1,17 +1,31 @@
-html, body {
+.serif-font {
     font-family: 'Palatino', 'Baskerville', 'Perpetua', serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.sans-serif-font {
     font-family: Arial, sans-serif;
 }
 
-.btn {
-    font-family: Arial, sans-serif;
+html, body {
+    @extend .serif-font;
 }
 
-.navbar {
-    font-family: Arial, sans-serif;
+h1, h2, h3, h4, h5, h6, .btn, .navbar {
+    @extend .sans-serif-font;
+}
+
+.image-bg {
+    background-image: image-url('wood.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.main-container {
+}
+
+.mt-hero {
+    margin-top: 20%;
+    margin-bottom: 10%;
 }
 
 // style devise errors

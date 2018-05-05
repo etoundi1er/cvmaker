@@ -8,24 +8,24 @@
     <%= javascript_include_tag 'application' %>
 </head>
 
-<body>
-    <div class="w-100 h-100 mx-auto">
+<body class="<%= 'image-bg' if @marketing_scope %>">
+    <div class="mx-auto">
         <header class="mb-auto">
-            <% if current_user %>
-                <%= render 'layouts/nav_frontend' %>
-            <% else %>
+            <% if @marketing_scope %>
                 <%= render 'layouts/nav' %>
+            <% else %>
+                <%= render 'layouts/nav_frontend' %>
             <% end %>
         </header>
 
-        <main role="main" class="container">
+        <main role="main" class="container main-container">
             <%= yield %>
         </main>
 
-        <footer class="container text-center text-muted">
-            <small>
-                <p>Simple CV Maker by <a href="https://twitter.com/etoundi_1er" target="_blank">@etoundi1er</a></p>
-            </small>
+        <footer class="container fixed-bottom text-center text-muted">
+            <div class="py-2 bg-white">
+                <small>CV Maker by <a href="https://twitter.com/etoundi_1er" target="_blank">Frank Etoundi</a></small>
+            </div>
         </footer>
     </div>
 </body>
