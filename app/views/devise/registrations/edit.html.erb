@@ -1,12 +1,17 @@
-<div class="text-center">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-signin' }) do |f| %>
+<div class="form-signin">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
         <h1 class="h3 mb-3 font-weight-normal">Edit <%= resource_name.to_s.humanize %></h1>
 
         <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, required: true, autofocus: true, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
             <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+            <%= f.email_field :email, required: true, autocomplete: 'email', class: 'form-control' %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,21 +19,29 @@
         <% end %>
 
         <div class="form-group">
-            <%= f.label :password %> <small>(leave blank if you don't want to change it)</small>
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-            <% if @minimum_password_length %>
-                <small><%= @minimum_password_length %> characters minimum</small>
-            <% end %>
-        </div>
-
-        <div class="form-group">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
-        <div class="form-group">
             <%= f.label :current_password %> <small>(we need your current password to confirm your changes)</small>
-            <%= f.password_field :current_password, autocomplete: "off" %>
+            <%= f.password_field :current_password, required: true, autocomplete: "off", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <a data-toggle="collapse" href="#change_password" role="button" aria-expanded="false" aria-controls="change_password">
+                Change current password
+            </a>
+        </div>
+
+        <div class="collapse" id="change_password">
+            <div class="form-group">
+                <%= f.label :password %> <small>(leave blank if you don't want to change it)</small>
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+                <% if @minimum_password_length %>
+                    <small><%= @minimum_password_length %> characters minimum</small>
+                <% end %>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+            </div>
         </div>
 
         <div class="form-group">
@@ -36,14 +49,15 @@
         </div>
     <% end %>
 
-    <div class="form-group">
-        <small>
-            <strong>Cancel my account</strong><br>
-            Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-        </small>
-        <br><br>
-        <%= link_to "Back", :back %>
-    </div>
-
     <%= render "devise/shared/links" %>
+
+    <div class="card mt-5">
+        <div class="card-body">
+            <h5 class="alert-heading">Delete my account!</h4>
+            <p>Don't look here, but should you want to delete your account, keep looking.</p>
+            <p>If you delete your account, all your data gets instantly deleted too. No backups or restoration possible later.</p>
+            <hr>
+            <p class="mb-0">Unhappy? <%= link_to "Delete my account", registration_path(resource_name), class: 'btn btn-sm btn-danger', data: { confirm: "Are you sure?" }, method: :delete %></p>
+        </div>
+    </div>
 </div>

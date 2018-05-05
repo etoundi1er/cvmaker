@@ -9,6 +9,24 @@
 </head>
 
 <body>
-    <%= yield %>
+    <div class="w-100 h-100 mx-auto">
+        <header class="mb-auto">
+            <% if current_user %>
+                <%= render 'layouts/nav_frontend' %>
+            <% else %>
+                <%= render 'layouts/nav' %>
+            <% end %>
+        </header>
+
+        <main role="main" class="container">
+            <%= yield %>
+        </main>
+
+        <footer class="container text-center text-muted">
+            <small>
+                <p>Simple CV Maker by <a href="https://twitter.com/etoundi_1er" target="_blank">@etoundi1er</a></p>
+            </small>
+        </footer>
+    </div>
 </body>
 </html>
