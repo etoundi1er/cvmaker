@@ -18,11 +18,29 @@
             <% end %>
         </header>
 
-        <main role="main" class="container main-container">
+        <main role="main" class="container" style="min-height: 80vh">
+            <% if content_for? :pagename %>
+                <h3><%= yield :pagename %></h3>
+            <% end %>
+
+            <% if content_for? :breadcrumb %>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <%= yield :breadcrumb %>
+                    </ol>
+                </nav>
+            <% end %>
+
+            <% unless @marketing_scope %>
+                <% unless flash.empty? %>
+                    <%= render 'flash_notice' %>
+                <% end %>
+            <% end %>
+
             <%= yield %>
         </main>
 
-        <footer class="container fixed-bottom text-center text-muted">
+        <footer class="container text-center text-muted mt-5 <%= 'fixed-bottom' if @marketing_scope %>">
             <div class="py-2 bg-white">
                 <small>CV Maker by <a href="https://twitter.com/etoundi_1er" target="_blank">Frank Etoundi</a></small>
             </div>

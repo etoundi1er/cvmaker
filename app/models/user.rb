@@ -9,4 +9,5 @@ class User < ApplicationRecord
     has_many :languages, dependent: :destroy
     has_many :recommendations, dependent: :destroy
     has_many :social_networks, dependent: :destroy
+    has_many :skills, dependent: :destroy
 end

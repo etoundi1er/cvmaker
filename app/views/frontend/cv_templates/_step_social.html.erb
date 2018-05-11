@@ -1,0 +1,12 @@
+<% if @cv_template.social_networks.any? %>
+    <% @cv_template.social_networks.each do |social_network| %>
+        <%= render 'frontend/social_networks/form', social_network: social_network %>
+    <% end %>
+<% else %>
+    <%= render 'frontend/social_networks/form', social_network: @user.social_networks.new(cv_template: @cv_template) %>
+<% end %>
+
+<div class="new-js-social-network"></div>
+
+<%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'education'), class: 'btn btn-primary' %>
+<%= link_to 'Add more', new_cv_template_social_network_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

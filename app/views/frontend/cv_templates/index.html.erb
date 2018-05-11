@@ -1,2 +1,19 @@
-<h1>Hi <%= current_user.email %></h1>
-<h1>Hi <%= current_user.name %></h1>
+<div class="row">
+    <div class="col-12">
+        <p>Hi <strong><%= current_user.name %>!</strong></p>
+        <% if @cv_templates.any? %>
+            <p>You currently have <%= pluralize(@cv_templates.size, 'CV') %></p>
+        <% else %>
+            <p>Let's start by creating your first CV</p>
+        <% end %>
+    </div>
+
+    <div class="col-12">
+        <div class="my-4">
+        <%= link_to 'Add New CV', new_cv_template_path, class: 'btn btn-primary' %></div>
+        <div class="card-columns">
+            <%= render partial: 'cv_template', collection: @cv_templates %>
+        </div>
+    </div>
+</div>
+

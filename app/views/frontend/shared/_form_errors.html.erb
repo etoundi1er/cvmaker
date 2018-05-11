@@ -1,0 +1,11 @@
+<% if model.errors.any? %>
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Failed to save because of <%= model.errors.count %> error(s):</strong>
+        <ul>
+            <% model.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

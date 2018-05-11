@@ -1,0 +1,31 @@
+<ul class="list-group">
+    <% if @cv_template.new_record? %>
+        <li class="list-group-item active">Basics</li>
+        <li class="list-group-item list-group-item-action">Personal Data</li>
+        <li class="list-group-item list-group-item-action">Social Networks</li>
+        <li class="list-group-item list-group-item-action">Education</li>
+        <li class="list-group-item list-group-item-action">Experiences</li>
+        <li class="list-group-item list-group-item-action">Certifications</li>
+        <li class="list-group-item list-group-item-action">Skills</li>
+        <li class="list-group-item list-group-item-action">Languages</li>
+        <li class="list-group-item list-group-item-action">Recommendations</li>
+    <% else %>
+        <%= link_to 'Basics', edit_cv_template_path(@cv_template, step: 'basics'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'basics'}" %>
+        <%= link_to 'Personal Data', edit_cv_template_path(@cv_template, step: 'personal'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'personal'}" %>
+        <%= link_to 'Social Networks', edit_cv_template_path(@cv_template, step: 'social'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'social'}" %>
+        <%= link_to 'Education', edit_cv_template_path(@cv_template, step: 'education'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'education'}" %>
+        <%= link_to 'Experiences', edit_cv_template_path(@cv_template, step: 'experiences'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'experiences'}" %>
+        <%= link_to 'Certifications', edit_cv_template_path(@cv_template, step: 'certifications'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'certifications'}" %>
+        <%= link_to 'Skills', edit_cv_template_path(@cv_template, step: 'skills'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'skills'}" %>
+        <%= link_to 'Languages', edit_cv_template_path(@cv_template, step: 'languages'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'languages'}" %>
+        <%= link_to 'Recommendations', edit_cv_template_path(@cv_template, step: 'recommendations'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'recommendations'}" %>
+    <% end %>
+</ul>
+
+<% if @cv_template.new_record? %>
+    <script>
+        $('.list-group-item').click(function(e){
+            alert('You cannot skip this step. Please fill in the form and continue');
+        })
+    </script>
+<% end %>

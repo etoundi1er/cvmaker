@@ -1,0 +1,13 @@
+<%= content_for :breadcrumb do %>
+    <%= bc_link 'Home', root_path %>
+    <%= bc_link 'New CV' %>
+<% end %>
+
+<div class="row">
+    <div class="col-sm-4">
+        <%= render 'edit_submenu' %>
+    </div>
+    <div class="col-sm-8">
+        <%= render 'step_basics' %>
+    </div>
+</div>

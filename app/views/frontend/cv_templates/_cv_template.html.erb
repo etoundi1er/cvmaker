@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><%= cv_template.title %></h5>
+        <p class="card-text"><%= truncate cv_template.description, length: 150, omission: '...' %></p>
+        <p class="card-text">
+            <small class="text-muted">
+                last updated: <%= format_date cv_template.updated_at %><br>
+                created: <%= format_date cv_template.created_at %>
+            </small>
+        </p>
+        <%= link_to 'Open', cv_template_path(cv_template), class: 'btn btn-sm btn-primary' %>
+    </div>
+</div>

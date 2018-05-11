@@ -7,12 +7,17 @@ Rails.application.routes.draw do
     scope module: 'frontend' do
         resources :images
         resources :cv_templates do
-            resources :certifications
-            resources :educations
-            resources :experiences
-            resources :languages
-            resources :recommendations
-            resources :social_networks
+            resources :social_networks, except: %i[index edit show]
+
+            member do
+                patch 'update_step_social'
+                patch 'update_step_education'
+                patch 'update_step_experiences'
+                patch 'update_step_certifications'
+                patch 'update_step_skills'
+                patch 'update_step_languages'
+                patch 'update_step_recommendations'
+            end
         end
     end
 

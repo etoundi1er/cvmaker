@@ -1,0 +1,4 @@
+<% if action_name.in?(%w[create destroy]) && flash[:alert].blank? %>
+    setTimeout(function() {window.location.reload();}, 1000);
+<% end %>
+$('.js-flash-notice').html("<%= j render 'layouts/flash_notice' %>");
