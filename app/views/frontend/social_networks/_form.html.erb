@@ -1,33 +1,38 @@
-<%= form_for [social_network.cv_template, social_network], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
-    <%= f.hidden_field :cv_template_id, value: social_network.cv_template_id %>
+<td>
+    <% if social_network.persisted? %>
+        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move">Drag me to reorder</div>
+    <% end %>
+    <%= form_for [social_network.cv_template, social_network], remote: true, html: { class: 'w-100' } do |f| %>
+        <%= f.hidden_field :cv_template_id, value: social_network.cv_template_id %>
 
-    <div class="form-group row">
-        <%= f.label :title, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :title, autofocus: true, required: true, placeholder: 'example: linkedin', class: 'form-control' %>
+        <div class="form-group row">
+            <%= f.label :title, class: 'col-sm-2 col-form-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :title, autofocus: true, required: true, placeholder: 'example: linkedin', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :username, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :username, required: true, placeholder: 'example: franketoundi', class: 'form-control' %>
+        <div class="form-group row">
+            <%= f.label :username, class: 'col-sm-2 col-form-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :username, required: true, placeholder: 'example: franketoundi', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :url, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :url, required: true, placeholder: 'example: https://www.linkedin.com/in/franketoundi/', class: 'form-control' %>
+        <div class="form-group row">
+            <%= f.label :url, class: 'col-sm-2 col-form-label' %>
+            <div class="col-sm-10">
+                <%= f.text_field :url, required: true, placeholder: 'example: https://www.linkedin.com/in/franketoundi/', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="row justify-content-end">
-        <div class="col-sm-10">
-            <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
-            <% if social_network.persisted? %>
-                <%= link_to 'Delete', cv_template_social_network_path(social_network.cv_template, social_network), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
-            <% end %>
+        <div class="row justify-content-end">
+            <div class="col-sm-10">
+                <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
+                <% if social_network.persisted? %>
+                    <%= link_to 'Delete', cv_template_social_network_path(social_network.cv_template, social_network), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
+                <% end %>
+            </div>
         </div>
-    </div>
-<% end %>
+    <% end %>
+</td>

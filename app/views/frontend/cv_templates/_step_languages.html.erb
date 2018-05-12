@@ -1,12 +1,21 @@
-<% if @cv_template.languages.any? %>
-    <% @cv_template.languages.each do |language| %>
-        <%= render 'frontend/languages/form', language: language %>
+<table class="table table-with-form mb-4">
+    <% if @cv_template.languages.any? %>
+        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+            <% @cv_template.languages.each do |language| %>
+                <tr class="cursor-move" id="language_<%= language.id %>">
+                    <%= render 'frontend/languages/form', language: language %>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+            <tr><%= render 'frontend/languages/form', language: @user.languages.new(cv_template: @cv_template) %></tr>
+        </tbody>
     <% end %>
-<% else %>
-    <%= render 'frontend/languages/form', language: @user.languages.new(cv_template: @cv_template) %>
-<% end %>
-
-<div class="new-js-language"></div>
+    <tbody>
+        <tr class="js-new-language"></tr>
+    </tbody>
+</table>
 
 <%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'recommendations'), class: 'btn btn-primary' %>
 <%= link_to 'Add more', new_cv_template_language_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

@@ -49,6 +49,14 @@ module Frontend
             end
         end
 
+        def sort
+            item = params.keys.first.to_s
+            params[item].each_with_index do |id, index|
+                @cv_template.send(item.pluralize).where(id: id).update_all(sorting: index + 1)
+            end
+            render body: nil
+        end
+
         private
 
         def set_user

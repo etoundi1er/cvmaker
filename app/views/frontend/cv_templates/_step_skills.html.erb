@@ -1,12 +1,21 @@
-<% if @cv_template.skills.any? %>
-    <% @cv_template.skills.each do |skill| %>
-        <%= render 'frontend/skills/form', skill: skill %>
+<table class="table table-with-form mb-4">
+    <% if @cv_template.skills.any? %>
+        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+            <% @cv_template.skills.each do |skill| %>
+                <tr class="cursor-move" id="skill_<%= skill.id %>">
+                    <%= render 'frontend/skills/form', skill: skill %>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+            <tr><%= render 'frontend/skills/form', skill: @user.skills.new(cv_template: @cv_template) %></tr>
+        </tbody>
     <% end %>
-<% else %>
-    <%= render 'frontend/skills/form', skill: @user.skills.new(cv_template: @cv_template) %>
-<% end %>
-
-<div class="new-js-skill"></div>
+    <tbody>
+        <tr class="js-new-skill"></tr>
+    </tbody>
+</table>
 
 <%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'languages'), class: 'btn btn-primary' %>
 <%= link_to 'Add more', new_cv_template_skill_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

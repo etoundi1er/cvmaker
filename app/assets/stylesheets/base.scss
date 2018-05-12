@@ -29,6 +29,25 @@ html, body {
     margin-bottom: 10%;
 }
 
+.cursor-move {
+    cursor: move;
+
+    &.btn { cursor: move !important; }
+}
+
+.table-with-form {
+    tr > td {
+        padding: 2em;
+        background-color: #fbfbfb;
+        border-bottom: 10px solid #ffffff;
+        border-top: 0;
+    }
+}
+
+.ui-sortable-helper {
+    display: table;
+}
+
 // style devise errors
 #error_explanation {
     @extend .alert;

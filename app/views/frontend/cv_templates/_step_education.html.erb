@@ -1,12 +1,21 @@
-<% if @cv_template.educations.any? %>
-    <% @cv_template.educations.each do |education| %>
-        <%= render 'frontend/educations/form', education: education %>
+<table class="table table-with-form mb-4">
+    <% if @cv_template.educations.any? %>
+        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+            <% @cv_template.educations.each do |education| %>
+                <tr class="cursor-move" id="education_<%= education.id %>">
+                    <%= render 'frontend/educations/form', education: education %>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+            <tr><%= render 'frontend/educations/form', education: @user.educations.new(cv_template: @cv_template) %></tr>
+        </tbody>
     <% end %>
-<% else %>
-    <%= render 'frontend/educations/form', education: @user.educations.new(cv_template: @cv_template) %>
-<% end %>
-
-<div class="new-js-education"></div>
+    <tbody>
+        <tr class="js-new-education"></tr>
+    </tbody>
+</table>
 
 <%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'experiences'), class: 'btn btn-primary' %>
 <%= link_to 'Add more', new_cv_template_education_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

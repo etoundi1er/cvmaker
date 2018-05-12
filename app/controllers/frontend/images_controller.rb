@@ -13,6 +13,10 @@ module Frontend
         def create
             @image = @user.images.new(image_params)
             if @image.save
+                if params[:cv_template_id]
+                    cv_template = @user.cv_templates.find_by(id: params[:cv_template_id])
+                    return redirect_to edit_cv_template_path(cv_template, step: 'personal'), notice: 'Image uploaded.' if cv_template
+                end
                 redirect_to images_path, notice: 'Image uploaded.'
             else
                 flash.now[:alert] = @image.errors.full_messages.to_sentence

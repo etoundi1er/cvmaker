@@ -16,3 +16,7 @@
 //= require popper
 //= require bootstrap
 //= require script
+//= require lib/jquery-image-picker
+//= require jquery-ui/widgets/sortable
+//= require jquery-ui/widgets/draggable
+//= require jquery-ui/widgets/droppable

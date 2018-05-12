@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     scope module: 'frontend' do
         resources :images
         resources :cv_templates do
+            post 'sort', on: :member
             resources :social_networks, except: %i[index edit show]
             resources :educations, except: %i[index edit show]
             resources :experiences, except: %i[index edit show]

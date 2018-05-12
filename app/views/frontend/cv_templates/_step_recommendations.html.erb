@@ -1,12 +1,21 @@
-<% if @cv_template.recommendations.any? %>
-    <% @cv_template.recommendations.each do |recommendation| %>
-        <%= render 'frontend/recommendations/form', recommendation: recommendation %>
+<table class="table table-with-form mb-4">
+    <% if @cv_template.recommendations.any? %>
+        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+            <% @cv_template.recommendations.each do |recommendation| %>
+                <tr class="cursor-move" id="recommendation_<%= recommendation.id %>">
+                    <%= render 'frontend/recommendations/form', recommendation: recommendation %>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+            <tr><%= render 'frontend/recommendations/form', recommendation: @user.recommendations.new(cv_template: @cv_template) %></tr>
+        </tbody>
     <% end %>
-<% else %>
-    <%= render 'frontend/recommendations/form', recommendation: @user.recommendations.new(cv_template: @cv_template) %>
-<% end %>
-
-<div class="new-js-recommendation"></div>
+    <tbody>
+        <tr class="js-new-recommendation"></tr>
+    </tbody>
+</table>
 
 <%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'certifications'), class: 'btn btn-primary' %>
 <%= link_to 'Add more', new_cv_template_recommendation_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

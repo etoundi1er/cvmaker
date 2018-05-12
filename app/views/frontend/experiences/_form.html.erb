@@ -1,55 +1,61 @@
-<%= form_for [experience.cv_template, experience], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
-    <%= f.hidden_field :cv_template_id, value: experience.cv_template_id %>
+<td>
+    <% if experience.persisted? %>
+        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move">Drag me to reorder</div>
+    <% end %>
 
-    <div class="form-group row">
-        <%= f.label :position, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :position, autofocus: true, required: true, placeholder: 'example: Software Developer', class: 'form-control' %>
-        </div>
-    </div>
+    <%= form_for [experience.cv_template, experience], remote: true, html: { class: 'w-100' } do |f| %>
+        <%= f.hidden_field :cv_template_id, value: experience.cv_template_id %>
 
-    <div class="form-group row">
-        <%= f.label :company, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :company, required: true, placeholder: 'example: Orakura Ltd', class: 'form-control' %>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Position</label>
+            <div class="col-sm-10">
+                <%= f.text_field :position, autofocus: true, required: true, placeholder: 'example: Software Developer', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :location, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :location, required: true, placeholder: 'example: Yaoundé, Cameroon', class: 'form-control' %>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Company</label>
+            <div class="col-sm-10">
+                <%= f.text_field :company, required: true, placeholder: 'example: Orakura Ltd', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :start_date, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :start_date, required: true, placeholder: 'example: 01.09.2010, or September 2010', class: 'form-control' %>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Location</label>
+            <div class="col-sm-10">
+                <%= f.text_field :location, required: true, placeholder: 'example: Yaoundé, Cameroon', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :end_date, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_field :end_date, placeholder: 'example: 01.09.2012, or September 2012', class: 'form-control' %>
-            <small>Leave blank if you still hold this position.</small>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Start Date</label>
+            <div class="col-sm-10">
+                <%= f.text_field :start_date, required: true, placeholder: 'example: 01.09.2010, or September 2010', class: 'form-control' %>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group row">
-        <%= f.label :summary, class: 'col-sm-2 col-form-label' %>
-        <div class="col-sm-10">
-            <%= f.text_area :summary, placeholder: 'A summary of your responsibilities and input in this position.', rows: 4, class: 'form-control' %>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">End Date</label>
+            <div class="col-sm-10">
+                <%= f.text_field :end_date, placeholder: 'example: 01.09.2012, or September 2012', class: 'form-control' %>
+                <small>Leave blank if you still hold this position.</small>
+            </div>
         </div>
-    </div>
 
-    <div class="row justify-content-end">
-        <div class="col-sm-10">
-            <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
-            <% if experience.persisted? %>
-                <%= link_to 'Delete', cv_template_experience_path(experience.cv_template, experience), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
-            <% end %>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Summary</label>
+            <div class="col-sm-10">
+                <%= f.text_area :summary, placeholder: 'A summary of your responsibilities and input in this position.', rows: 4, class: 'form-control' %>
+            </div>
         </div>
-    </div>
-<% end %>
+
+        <div class="row justify-content-end">
+            <div class="col-sm-10">
+                <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
+                <% if experience.persisted? %>
+                    <%= link_to 'Delete', cv_template_experience_path(experience.cv_template, experience), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</td>

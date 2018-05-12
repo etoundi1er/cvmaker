@@ -19,6 +19,14 @@ class ImageUploader < CarrierWave::Uploader::Base
         "cvmaker/uploads/images/#{mounted_as}/#{model.id}"
     end
 
+    def fix_exif_rotation
+        manipulate! do |img|
+            img.tap(&:auto_orient)
+        end
+    end
+
+    process :fix_exif_rotation
+
     # Provide a default URL as a default if there hasn't been a file uploaded:
     # def default_url(*args)
     #   # For Rails 3.1+ asset pipeline compatibility:
@@ -36,11 +44,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
     # Create different versions of your uploaded files:
     version :thumb do
-        process resize_to_fill: [200, 200]
+        process resize_to_fit: [200, 200]
     end
 
     version :medium do
-        process resize_to_fill: [500, 500]
+        process resize_to_fit: [500, 500]
     end
 
     # Add a white list of extensions which are allowed to be uploaded.

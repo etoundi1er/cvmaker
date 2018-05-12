@@ -1,10 +1,21 @@
-<% if @cv_template.certifications.any? %>
-    <% @cv_template.certifications.each do |certification| %>
-        <%= render 'frontend/certifications/form', certification: certification %>
+<table class="table table-with-form mb-4">
+    <% if @cv_template.certifications.any? %>
+        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+            <% @cv_template.certifications.each do |certification| %>
+                <tr class="cursor-move" id="certification_<%= certification.id %>">
+                    <%= render 'frontend/certifications/form', certification: certification %>
+                </tr>
+            <% end %>
+        </tbody>
+    <% else %>
+        <tbody>
+            <tr><%= render 'frontend/certifications/form', certification: @user.certifications.new(cv_template: @cv_template) %></tr>
+        </tbody>
     <% end %>
-<% else %>
-    <%= render 'frontend/certifications/form', certification: @user.certifications.new(cv_template: @cv_template) %>
-<% end %>
+    <tbody>
+        <tr class="js-new-certification"></tr>
+    </tbody>
+</table>
 
 <div class="new-js-certification"></div>
 
