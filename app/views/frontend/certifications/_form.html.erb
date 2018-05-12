@@ -1,0 +1,47 @@
+<%= form_for [certification.cv_template, certification], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
+    <%= f.hidden_field :cv_template_id, value: certification.cv_template_id %>
+
+    <div class="form-group row">
+        <%= f.label :title, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :title, autofocus: true, required: true, placeholder: 'example: Cisco Certification', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :company, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :company, required: true, placeholder: 'example: Orakura Ltd', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :location, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :location, required: true, placeholder: 'example: Yaoundé, Cameroon', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :certification_date, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :certification_date, required: true, placeholder: 'example: 01.09.2010, or September 2010', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :summary, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_area :summary, placeholder: 'A brief description of this certification.', rows: 4, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-sm-10">
+            <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
+            <% if certification.persisted? %>
+                <%= link_to 'Delete', cv_template_certification_path(certification.cv_template, certification), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
+            <% end %>
+        </div>
+    </div>
+<% end %>

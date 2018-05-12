@@ -1,0 +1,12 @@
+<% if @cv_template.certifications.any? %>
+    <% @cv_template.certifications.each do |certification| %>
+        <%= render 'frontend/certifications/form', certification: certification %>
+    <% end %>
+<% else %>
+    <%= render 'frontend/certifications/form', certification: @user.certifications.new(cv_template: @cv_template) %>
+<% end %>
+
+<div class="new-js-certification"></div>
+
+<%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'skills'), class: 'btn btn-primary' %>
+<%= link_to 'Add more', new_cv_template_certification_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

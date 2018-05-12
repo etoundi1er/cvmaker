@@ -10,6 +10,7 @@ class CreateCvTemplates < ActiveRecord::Migration[5.1]
         create_table :social_networks do |t|
             t.string :title
             t.string :url
+            t.string :username
             t.references :cv_template, index: true
             t.references :user, index: true
             t.timestamps
@@ -43,8 +44,7 @@ class CreateCvTemplates < ActiveRecord::Migration[5.1]
             t.string :title
             t.string :company
             t.string :location
-            t.string :start_date
-            t.string :end_date
+            t.string :certification_date
             t.text   :summary
             t.references :cv_template, index: true
             t.references :user, index: true
@@ -53,7 +53,7 @@ class CreateCvTemplates < ActiveRecord::Migration[5.1]
 
         create_table :recommendations do |t|
             t.string :name
-            t.string :job
+            t.string :profession
             t.string :company
             t.string :phone
             t.string :email
@@ -64,7 +64,7 @@ class CreateCvTemplates < ActiveRecord::Migration[5.1]
 
         create_table :languages do |t|
             t.string :name
-            t.integer :level
+            t.string :level
             t.references :cv_template, index: true
             t.references :user, index: true
             t.timestamps
@@ -72,7 +72,7 @@ class CreateCvTemplates < ActiveRecord::Migration[5.1]
 
         create_table :skills do |t|
             t.string :name
-            t.integer :level
+            t.string :level
             t.references :cv_template, index: true
             t.references :user, index: true
             t.timestamps

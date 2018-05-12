@@ -8,16 +8,12 @@ Rails.application.routes.draw do
         resources :images
         resources :cv_templates do
             resources :social_networks, except: %i[index edit show]
-
-            member do
-                patch 'update_step_social'
-                patch 'update_step_education'
-                patch 'update_step_experiences'
-                patch 'update_step_certifications'
-                patch 'update_step_skills'
-                patch 'update_step_languages'
-                patch 'update_step_recommendations'
-            end
+            resources :educations, except: %i[index edit show]
+            resources :experiences, except: %i[index edit show]
+            resources :certifications, except: %i[index edit show]
+            resources :skills, except: %i[index edit show]
+            resources :languages, except: %i[index edit show]
+            resources :recommendations, except: %i[index edit show]
         end
     end
 

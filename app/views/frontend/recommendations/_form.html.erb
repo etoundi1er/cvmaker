@@ -1,0 +1,47 @@
+<%= form_for [recommendation.cv_template, recommendation], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
+    <%= f.hidden_field :cv_template_id, value: recommendation.cv_template_id %>
+
+    <div class="form-group row">
+        <%= f.label :name, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :name, autofocus: true, required: true, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :profession, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :profession, required: true, placeholder: 'example: Managing Director', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :company, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :company, required: true, placeholder: 'example: Orakura Ltd', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :phone, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :phone, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :email, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :email, class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-sm-10">
+            <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
+            <% if recommendation.persisted? %>
+                <%= link_to 'Delete', cv_template_recommendation_path(recommendation.cv_template, recommendation), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
+            <% end %>
+        </div>
+    </div>
+<% end %>

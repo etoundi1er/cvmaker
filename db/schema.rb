@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180511194741) do
+ActiveRecord::Schema.define(version: 20180504145336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(version: 20180511194741) do
     t.string "title"
     t.string "company"
     t.string "location"
-    t.string "start_date"
-    t.string "end_date"
+    t.string "certification_date"
     t.text "summary"
     t.bigint "cv_template_id"
     t.bigint "user_id"
@@ -90,7 +89,7 @@ ActiveRecord::Schema.define(version: 20180511194741) do
 
   create_table "languages", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.string "level"
     t.bigint "cv_template_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -101,7 +100,7 @@ ActiveRecord::Schema.define(version: 20180511194741) do
 
   create_table "recommendations", force: :cascade do |t|
     t.string "name"
-    t.string "job"
+    t.string "profession"
     t.string "company"
     t.string "phone"
     t.string "email"
@@ -115,7 +114,7 @@ ActiveRecord::Schema.define(version: 20180511194741) do
 
   create_table "skills", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.string "level"
     t.bigint "cv_template_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -127,11 +126,11 @@ ActiveRecord::Schema.define(version: 20180511194741) do
   create_table "social_networks", force: :cascade do |t|
     t.string "title"
     t.string "url"
+    t.string "username"
     t.bigint "cv_template_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
     t.index ["cv_template_id"], name: "index_social_networks_on_cv_template_id"
     t.index ["user_id"], name: "index_social_networks_on_user_id"
   end

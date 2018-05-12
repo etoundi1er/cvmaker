@@ -33,7 +33,7 @@
 
             <% unless @marketing_scope %>
                 <% unless flash.empty? %>
-                    <%= render 'flash_notice' %>
+                    <%= render 'layouts/flash_notice' %>
                 <% end %>
             <% end %>
 
@@ -46,5 +46,6 @@
             </div>
         </footer>
     </div>
+    <%= yield :js %>
 </body>
 </html>

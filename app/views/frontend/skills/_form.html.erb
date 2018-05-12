@@ -1,0 +1,26 @@
+<%= form_for [skill.cv_template, skill], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
+    <%= f.hidden_field :cv_template_id, value: skill.cv_template_id %>
+
+    <div class="form-group row">
+        <%= f.label :name, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :name, autofocus: true, required: true, placeholder: 'example: Microsoft Office', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <%= f.label :level, class: 'col-sm-2 col-form-label' %>
+        <div class="col-sm-10">
+            <%= f.text_field :level, required: true, placeholder: 'examples: Beginner, Intermediate, Expert', class: 'form-control' %>
+        </div>
+    </div>
+
+    <div class="row justify-content-end">
+        <div class="col-sm-10">
+            <%= f.submit 'Save', class: 'btn btn-sm btn-outline-secondary' %>
+            <% if skill.persisted? %>
+                <%= link_to 'Delete', cv_template_skill_path(skill.cv_template, skill), remote: true, method: :delete, data: { confirm: 'Are you sure about deleting this?' }, class: 'btn btn-sm btn-outline-danger' %>
+            <% end %>
+        </div>
+    </div>
+<% end %>

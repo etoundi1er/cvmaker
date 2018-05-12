@@ -1,0 +1,12 @@
+<% if @cv_template.experiences.any? %>
+    <% @cv_template.experiences.each do |experience| %>
+        <%= render 'frontend/experiences/form', experience: experience %>
+    <% end %>
+<% else %>
+    <%= render 'frontend/experiences/form', experience: @user.experiences.new(cv_template: @cv_template) %>
+<% end %>
+
+<div class="new-js-experience"></div>
+
+<%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'certifications'), class: 'btn btn-primary' %>
+<%= link_to 'Add more', new_cv_template_experience_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

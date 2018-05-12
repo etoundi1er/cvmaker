@@ -1,0 +1,12 @@
+<% if @cv_template.languages.any? %>
+    <% @cv_template.languages.each do |language| %>
+        <%= render 'frontend/languages/form', language: language %>
+    <% end %>
+<% else %>
+    <%= render 'frontend/languages/form', language: @user.languages.new(cv_template: @cv_template) %>
+<% end %>
+
+<div class="new-js-language"></div>
+
+<%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'recommendations'), class: 'btn btn-primary' %>
+<%= link_to 'Add more', new_cv_template_language_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>
