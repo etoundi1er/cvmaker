@@ -4,3 +4,6 @@ en:
       user:
         firstname: 'First Name'
         lastname: 'Last Name'
+  errors:
+    messages:
+      max_size_error: 'must be less than 5MB'

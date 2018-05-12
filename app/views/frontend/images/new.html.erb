@@ -1,0 +1,12 @@
+<%= content_for :breadcrumb do %>
+    <%= bc_link 'Home', root_path %>
+    <%= bc_link 'Images', images_path %>
+    <%= bc_link 'New Image' %>
+<% end %>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h4>Upload a new image</h4>
+        <%= render 'form', image: @image %>
+    </div>
+</div>

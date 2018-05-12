@@ -1,0 +1,15 @@
+<div class="card">
+    <%= link_to image.image_url, target: '_blank' do %>
+        <%= image_tag(image.image.medium.url, class: 'card-img-top', alt: image.title) if image.image? %>
+    <% end %>
+    <div class="card-body">
+        <p class="card-text">
+            <%= image.title %>
+            <small><em><%= image.image_identifier %></em></small>
+        </p>
+    </div>
+    <div class="card-footer">
+        <%= link_to 'View Large', image.image_url, target: '_blank', class: 'btn btn-sm btn-outline-primary' %>
+        <%= link_to 'Delete', image_path(image), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure about deleting this image?' } %>
+    </div>
+</div>

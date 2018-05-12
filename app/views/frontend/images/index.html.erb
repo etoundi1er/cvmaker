@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-12">
+        <div class="my-4">
+            <%= link_to 'Add New Image', new_image_path, class: 'btn btn-primary' %>
+        </div>
+
+        <div class="card-columns">
+            <%= render partial: 'image', collection: @images %>
+        </div>
+    </div>
+</div>
+

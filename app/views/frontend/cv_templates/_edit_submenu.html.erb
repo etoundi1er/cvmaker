@@ -10,7 +10,7 @@
         <li class="list-group-item list-group-item-action">Languages</li>
         <li class="list-group-item list-group-item-action">Recommendations</li>
     <% else %>
-        <%= link_to 'Basics', edit_cv_template_path(@cv_template, step: 'basics'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'basics'}" %>
+        <%= link_to 'Basics', edit_cv_template_path(@cv_template, step: 'basics'), class: "list-group-item list-group-item-action #{'active' if params[:step].blank? || params[:step] == 'basics'}" %>
         <%= link_to 'Personal Data', edit_cv_template_path(@cv_template, step: 'personal'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'personal'}" %>
         <%= link_to 'Social Networks', edit_cv_template_path(@cv_template, step: 'social'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'social'}" %>
         <%= link_to 'Education', edit_cv_template_path(@cv_template, step: 'education'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'education'}" %>
@@ -28,4 +28,8 @@
             alert('You cannot skip this step. Please fill in the form and continue');
         })
     </script>
+<% else %>
+    <div class="my-4">
+        <%= link_to 'Preview CV', '#', class: 'btn btn-outline-success btn-block' %>
+    </div>
 <% end %>

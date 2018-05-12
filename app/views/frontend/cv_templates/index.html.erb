@@ -10,7 +10,8 @@
 
     <div class="col-12">
         <div class="my-4">
-        <%= link_to 'Add New CV', new_cv_template_path, class: 'btn btn-primary' %></div>
+            <%= link_to 'Add New CV', new_cv_template_path, class: 'btn btn-primary' %>
+        </div>
         <div class="card-columns">
             <%= render partial: 'cv_template', collection: @cv_templates %>
         </div>
