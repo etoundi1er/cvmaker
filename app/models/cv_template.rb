@@ -11,4 +11,8 @@ class CvTemplate < ApplicationRecord
     has_many :skills, dependent: :destroy
 
     validates :title, presence: true, uniqueness: { scope: :user_id }
+
+    def fullname
+        "#{firstname} #{lastname}".strip
+    end
 end

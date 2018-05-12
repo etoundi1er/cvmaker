@@ -30,6 +30,6 @@
     </script>
 <% else %>
     <div class="my-4">
-        <%= link_to 'Preview CV', '#', class: 'btn btn-outline-success btn-block' %>
+        <%= link_to 'Preview CV', preview_cv_template_path(@cv_template, step: params[:step]), class: 'btn btn-outline-success btn-block' %>
     </div>
 <% end %>

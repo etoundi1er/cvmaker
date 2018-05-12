@@ -57,6 +57,12 @@ module Frontend
             render body: nil
         end
 
+        def blank_preview; end
+
+        def preview
+            render partial: 'frontend/cv_templates/preview', locals: { cv_template: @cv_template }
+        end
+
         private
 
         def set_user
@@ -68,7 +74,7 @@ module Frontend
         end
 
         def cv_template_params
-            params.require(:cv_template).permit(:title, :description, :firstname, :lastname, :profession, :phone, :email, :website, :address, :image_id)
+            params.require(:cv_template).permit(:title, :description, :firstname, :lastname, :profession, :phone, :email, :website, :address, :summary, :image_id)
         end
     end
 end

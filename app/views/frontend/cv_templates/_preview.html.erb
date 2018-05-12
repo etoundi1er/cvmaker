@@ -1,6 +1,89 @@
-<div class="row">
-    <div class="col-12">
-        <h3><span class="js-firstname"><%= @cv_template.firstname %></span> <span class="js-lastname"><%= @cv_template.lastname %></span></h3>
-        <h5><span class="js-profession"><%= @cv_template.profession %></span></h5>
-    </div>
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Simple Free Online CV Maker By Frank Etoundi">
+        <meta name="author" content="Frank Etoundi">
+        <meta name="keyword" content="Simple Free Online CV Maker Making Tool Frank Etoundi">
+        <link rel="shortcut icon" type="image/png" href="<%= asset_path('favicon.png') %>">
+        <link rel="apple-touch-icon" sizes="64x64" href="<%= asset_path('favicon.png') %>">
+
+        <title>PREVIEW - CV Maker by Frank Etoundi</title>
+
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag 'print', media: 'all' %>
+    </head>
+
+    <body>
+        <div class="col-right">
+            <div class="personal-details">
+                <h1><%= cv_template.fullname %></h1>
+                <h2><%= cv_template.profession %></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="entry">
+                    <div class="title">
+                        <h3>2014 - Present</h3>
+                        <p>Title, Company</p>
+                    </div>
+                    <div class="body">
+                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
+                        <ul>
+                            <li>Rerum sit libero possimus amet excepturi</li>
+                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
+                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3>2010 - Present</h3>
+                        <p>Title, Company</p>
+                    </div>
+                    <div class="body">
+                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
+                        <ul>
+                            <li>Rerum sit libero possimus amet excepturi</li>
+                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
+                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3>2009 - 2010</h3>
+                        <p>Title, Company</p>
+                    </div>
+                    <div class="body">
+                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
+                        <ul>
+                            <li>Rerum sit libero possimus amet excepturi</li>
+                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
+                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div class="title">
+                        <h3>2006 - 2008</h3>
+                        <p>Title, Company</p>
+                    </div>
+                    <div class="body">
+                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
+                        <ul>
+                            <li>Rerum sit libero possimus amet excepturi</li>
+                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
+                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-left"></div>
+    </body>
+</html>
