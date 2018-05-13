@@ -27,7 +27,7 @@
             <% end %>
         </header>
 
-        <main role="main" class="container" style="min-height: 80vh">
+        <main role="main" class="container" style="min-height: <%= @marketing_scope ? '100%' : '80vh' %>">
             <% if content_for? :pagename %>
                 <h3><%= yield :pagename %></h3>
             <% end %>
