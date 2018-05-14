@@ -1,17 +1,15 @@
 <table class="table table-with-form mb-4">
-    <% if @cv_template.languages.any? %>
-        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+    <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+        <% if @cv_template.languages.any? %>
             <% @cv_template.languages.each do |language| %>
-                <tr class="cursor-move" id="language_<%= language.id %>">
+                <tr id="language_<%= language.id %>">
                     <%= render 'frontend/languages/form', language: language %>
                 </tr>
             <% end %>
-        </tbody>
-    <% else %>
-        <tbody>
+        <% else %>
             <tr><%= render 'frontend/languages/form', language: @user.languages.new(cv_template: @cv_template) %></tr>
-        </tbody>
-    <% end %>
+        <% end %>
+    </tbody>
     <tbody>
         <tr class="js-new-language"></tr>
     </tbody>

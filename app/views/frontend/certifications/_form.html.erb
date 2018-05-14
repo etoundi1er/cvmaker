@@ -1,6 +1,6 @@
 <td>
     <% if certification.persisted? %>
-        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move">Drag me to reorder</div>
+        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move js-move-handle">Drag me to reorder</div>
     <% end %>
 
     <%= form_for [certification.cv_template, certification], remote: true, html: { class: 'w-100 mb-5' } do |f| %>
@@ -37,7 +37,8 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Summary</label>
             <div class="col-sm-10">
-                <%= f.text_area :summary, placeholder: 'A brief description of this certification.', rows: 4, class: 'form-control' %>
+                <%= f.hidden_field :summary %>
+                <trix-editor input="experience_summary"></trix-editor>
             </div>
         </div>
 

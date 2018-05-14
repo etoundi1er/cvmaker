@@ -57,12 +57,6 @@ module Frontend
             render body: nil
         end
 
-        def blank_preview; end
-
-        def preview
-            render partial: 'frontend/cv_templates/preview', locals: { cv_template: @cv_template }
-        end
-
         private
 
         def set_user

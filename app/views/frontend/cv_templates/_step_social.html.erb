@@ -1,17 +1,15 @@
 <table class="table table-with-form mb-4">
-    <% if @cv_template.social_networks.any? %>
-        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+    <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+        <% if @cv_template.social_networks.any? %>
             <% @cv_template.social_networks.each do |social_network| %>
-                <tr class="cursor-move" id="social_network_<%= social_network.id %>">
+                <tr id="social_network_<%= social_network.id %>">
                     <%= render 'frontend/social_networks/form', social_network: social_network %>
                 </tr>
             <% end %>
-        </tbody>
-    <% else %>
-        <tbody>
-            <tr><%= render 'frontend/social_networks/form', social_network: @user.social_networks.new(cv_template: @cv_template) %></tr>
-        </tbody>
-    <% end %>
+        <% else %>
+            <tr><%= render 'frontend/social_networks/form', social_network: @user.educations.new(cv_template: @cv_template) %></tr>
+        <% end %>
+    </tbody>
     <tbody>
         <tr class="js-new-social-network"></tr>
     </tbody>

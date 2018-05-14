@@ -1,17 +1,15 @@
 <table class="table table-with-form mb-4">
-    <% if @cv_template.skills.any? %>
-        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+    <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+        <% if @cv_template.skills.any? %>
             <% @cv_template.skills.each do |skill| %>
-                <tr class="cursor-move" id="skill_<%= skill.id %>">
+                <tr id="skill_<%= skill.id %>">
                     <%= render 'frontend/skills/form', skill: skill %>
                 </tr>
             <% end %>
-        </tbody>
-    <% else %>
-        <tbody>
+        <% else %>
             <tr><%= render 'frontend/skills/form', skill: @user.skills.new(cv_template: @cv_template) %></tr>
-        </tbody>
-    <% end %>
+        <% end %>
+    </tbody>
     <tbody>
         <tr class="js-new-skill"></tr>
     </tbody>

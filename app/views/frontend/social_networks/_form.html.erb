@@ -1,6 +1,6 @@
 <td>
     <% if social_network.persisted? %>
-        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move">Drag me to reorder</div>
+        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move js-move-handle">Drag me to reorder</div>
     <% end %>
     <%= form_for [social_network.cv_template, social_network], remote: true, html: { class: 'w-100' } do |f| %>
         <%= f.hidden_field :cv_template_id, value: social_network.cv_template_id %>

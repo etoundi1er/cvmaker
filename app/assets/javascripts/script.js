@@ -7,6 +7,8 @@ function clearAlert(){
 // Sortable tables
 function enableSortable() {
     $(".js-sortable").sortable({
+        connectWith: '.js-sortable',
+        handle: ".js-move-handle",
         axis: "y",
         update: function() {
             return $.post($(this).data("sort-url"), $(this).sortable("serialize"));
@@ -16,5 +18,4 @@ function enableSortable() {
 
 $(document).ready(function() {
     clearAlert();
-    enableSortable();
 });

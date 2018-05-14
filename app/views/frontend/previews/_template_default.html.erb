@@ -1,0 +1,91 @@
+<div class="template-default">
+    <div class="col-right">
+        <div class="personal-details">
+            <div class="entry">
+                <h2><%= cv_template.fullname %></h2>
+                <h2 class="subtitle"><%= cv_template.profession %></h2>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <% if cv_template.experiences.any? %>
+                <div class="entry">
+                    <div class="time section-block"></div>
+                    <div class="section">
+                        <h3>Professional Experience</h3>
+                    </div>
+                </div>
+                <% cv_template.experiences.each do |experience| %>
+                    <div class="entry">
+                        <div class="time">
+                            <span><%= experience.start_date %> - <%= experience.end_date %></span>
+                        </div>
+                        <div class="body">
+                            <p class="title"><%= experience.position %></p>
+                            <p class="subtitle"><%= experience.company %>, <%= experience.location %></p>
+                            <div class="summary">
+                                <%= simple_format experience.summary %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+
+            <% if cv_template.educations.any? %>
+                <div class="entry">
+                    <div class="time section-block"></div>
+                    <div class="section">
+                        <h3>Education</h3>
+                    </div>
+                </div>
+                <% cv_template.educations.each do |education| %>
+                    <div class="entry">
+                        <div class="time">
+                            <span><%= education.start_date %> - <%= education.end_date %></span>
+                        </div>
+                        <div class="body">
+                            <p class="title"><%= education.courses %></p>
+                            <p class="subtitle"><%= education.academy %>, <%= education.location %></p>
+                            <div class="summary">
+                                <%= simple_format education.summary %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+
+            <% if cv_template.certifications.any? %>
+                <div class="entry">
+                    <div class="time section-block"></div>
+                    <div class="section">
+                        <h3>Certificatoons</h3>
+                    </div>
+                </div>
+                <% cv_template.certifications.each do |certification| %>
+                    <div class="entry">
+                        <div class="time">
+                            <span><%= certification.certification_date %></span>
+                        </div>
+                        <div class="body">
+                            <p class="title"><%= certification.title %></p>
+                            <p class="subtitle"><%= certification.company %>, <%= certification.location %></p>
+                            <div class="summary">
+                                <%= simple_format certification.summary %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="col-left">
+        <% if cv_template.image %>
+            <div class="profile-image">
+                <div class="image">
+                    <%= wicked_pdf_image_tag(cv_template.image.image.medium.url) %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

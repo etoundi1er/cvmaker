@@ -1,17 +1,15 @@
 <table class="table table-with-form mb-4">
-    <% if @cv_template.experiences.any? %>
-        <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+    <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+        <% if @cv_template.experiences.any? %>
             <% @cv_template.experiences.each do |experience| %>
-                <tr class="cursor-move" id="experience_<%= experience.id %>">
+                <tr id="experience_<%= experience.id %>">
                     <%= render 'frontend/experiences/form', experience: experience %>
                 </tr>
             <% end %>
-        </tbody>
-    <% else %>
-        <tbody>
-            <tr><%= render 'frontend/experiences/form', experience: @user.experiences.new(cv_template: @cv_template) %></tr>
-        </tbody>
-    <% end %>
+        <% else %>
+            <tr><%= render 'frontend/experiences/form', experience: @user.certifications.new(cv_template: @cv_template) %></tr>
+        <% end %>
+    </tbody>
     <tbody>
         <tr class="js-new-experience"></tr>
     </tbody>

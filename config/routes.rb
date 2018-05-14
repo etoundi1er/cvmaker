@@ -5,11 +5,13 @@ Rails.application.routes.draw do
     end
 
     scope module: 'frontend' do
+        get 'preview/:cv_template_id', to: 'previews#show', as: 'cv_template_preview'
+        get 'generate_pdf/:cv_template_id', to: 'previews#generate_pdf', as: 'cv_template_generate_pdf'
+
         resources :images
         resources :cv_templates do
             member do
                 post 'sort'
-                get 'preview'
             end
             resources :social_networks, except: %i[index edit show]
             resources :educations, except: %i[index edit show]

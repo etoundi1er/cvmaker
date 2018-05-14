@@ -1,0 +1,15 @@
+<div class="preview sans-serif-font">
+    <div class="nav">
+        <div class="container">
+            <h3>PREVIEW</h3>
+            <div class="actions">
+                <%= link_to 'Download', cv_template_generate_pdf_path(@cv_template, format: :pdf), class: 'btn btn-primary' %>
+                <%= link_to 'Back to edit', edit_cv_template_path(@cv_template, step: params[:step]), class: 'btn' %>
+            </div>
+        </div>
+    </div>
+
+    <div class="cv-preview">
+        <%= render @cv_template.template.presence || 'template_default', cv_template: @cv_template %>
+    </div>
+</div>

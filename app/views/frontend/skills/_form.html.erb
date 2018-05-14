@@ -1,6 +1,6 @@
 <td>
     <% if skill.persisted? %>
-        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move">Drag me to reorder</div>
+        <div class="btn btn-sm btn-block btn-light mb-3 cursor-move js-move-handle">Drag me to reorder</div>
     <% end %>
 
     <%= form_for [skill.cv_template, skill], remote: true, html: { class: 'w-100' } do |f| %>
