@@ -1,0 +1,6 @@
+<%
+    cv_template ||= @cv_template
+    template_partial = cv_template.template.presence || 'template_default'
+%>
+
+<%= render partial: "frontend/previews/#{template_partial}", locals: { cv_template: cv_template } %>

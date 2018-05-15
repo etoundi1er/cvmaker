@@ -24,7 +24,7 @@
                             <p class="title"><%= experience.position %></p>
                             <p class="subtitle"><%= experience.company %>, <%= experience.location %></p>
                             <div class="summary">
-                                <%= simple_format experience.summary %>
+                                <%= raw experience.summary %>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                             <p class="title"><%= education.courses %></p>
                             <p class="subtitle"><%= education.academy %>, <%= education.location %></p>
                             <div class="summary">
-                                <%= simple_format education.summary %>
+                                <%= raw education.summary %>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="entry">
                     <div class="time section-block"></div>
                     <div class="section">
-                        <h3>Certificatoons</h3>
+                        <h3>Certifications</h3>
                     </div>
                 </div>
                 <% cv_template.certifications.each do |certification| %>
@@ -70,7 +70,30 @@
                             <p class="title"><%= certification.title %></p>
                             <p class="subtitle"><%= certification.company %>, <%= certification.location %></p>
                             <div class="summary">
-                                <%= simple_format certification.summary %>
+                                <%= raw certification.summary %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+
+            <% if cv_template.recommendations.any? %>
+                <div class="entry">
+                    <div class="time section-block"></div>
+                    <div class="section">
+                        <h3>Recommendations</h3>
+                    </div>
+                </div>
+                <% cv_template.recommendations.each do |recommendation| %>
+                    <div class="entry">
+                        <div class="time blank"></div>
+                        <div class="body">
+                            <p class="title"><%= recommendation.name %></p>
+                            <p class="subtitle">
+                                <%= recommendation.profession_and_company %>
+                            </p>
+                            <div class="summary">
+                                <%= recommendation.phone_and_email.presence %>
                             </div>
                         </div>
                     </div>
@@ -83,8 +106,53 @@
         <% if cv_template.image %>
             <div class="profile-image">
                 <div class="image">
-                    <%= wicked_pdf_image_tag(cv_template.image.image.medium.url) %>
+                    <%= image_tag(cv_template.image.image.medium.url) %>
                 </div>
+            </div>
+        <% end %>
+        <div class="entry">
+            <h3>Personal Info</h3>
+            <dl>
+                <% if cv_template.address.present? %>
+                    <dt>ADDRESS</dt><dd><%= simple_format(cv_template.address) %></dd>
+                <% end %>
+                <% if cv_template.phone.present? %>
+                    <dt>PHONE</dt><dd><%= cv_template.phone %></dd>
+                <% end %>
+                <% if cv_template.email.present? %>
+                    <dt>EMAIL</dt><dd><%= cv_template.email %></dd>
+                <% end %>
+                <% if cv_template.website.present? %>
+                    <dt>WEBSITE</dt><dd><%= cv_template.website %></dd>
+                <% end %>
+                <% if cv_template.social_networks.any? %>
+                    <% cv_template.social_networks.each do |social_network| %>
+                        <dt><%= social_network.title.upcase %></dt>
+                        <dd>
+                            <%= social_network.username.presence || social_network.url %>
+                        </dd>
+                    <% end %>
+                <% end %>
+            </dl>
+        </div>
+        <% if cv_template.skills.any? %>
+            <div class="entry">
+                <h3>Skills</h3>
+                <dl>
+                    <% cv_template.skills.each do |skill| %>
+                        <dt><%= skill.name.upcase %></dt><dd><%= skill.level %></dd>
+                    <% end %>
+                </dl>
+            </div>
+        <% end %>
+        <% if cv_template.languages.any? %>
+            <div class="entry">
+                <h3>Languages</h3>
+                <dl>
+                    <% cv_template.languages.each do |language| %>
+                        <dt><%= language.name.upcase %></dt><dd><%= language.level %></dd>
+                    <% end %>
+                </dl>
             </div>
         <% end %>
     </div>

@@ -14,7 +14,11 @@
 
         <%= csrf_meta_tags %>
 
-        <%= stylesheet_link_tag 'print' %>
+        <style>
+            <%= Rails.application.assets.find_asset('print.scss').to_s.html_safe %>
+        </style>
+
+        <%#= stylesheet_link_tag('print') %>
     </head>
 
     <body>

@@ -35,7 +35,8 @@ gem 'aws-sdk', '~> 2'
 
 gem 'bootstrap', '~> 4.1.0'
 gem 'devise'
-gem 'wicked_pdf', '~> 1.1'
+gem 'pdfkit'
+gem 'render_anywhere'
 gem 'wkhtmltopdf-binary'
 
 group :development, :test do

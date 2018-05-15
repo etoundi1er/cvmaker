@@ -37,8 +37,8 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Summary</label>
             <div class="col-sm-10">
-                <%= f.hidden_field :summary %>
-                <trix-editor input="experience_summary"></trix-editor>
+                <%= f.hidden_field :summary, id: "experience_summary_#{certification.id}" %>
+                <trix-editor input="experience_summary_<%= certification.id %>"></trix-editor>
             </div>
         </div>
 

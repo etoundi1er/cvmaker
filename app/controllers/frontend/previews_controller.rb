@@ -7,14 +7,10 @@ module Frontend
 
         def show; end
 
-        def generate_pdf
+        def download
             respond_to do |format|
                 format.html
-                format.pdf do
-                    render pdf:         @cv_template.template,
-                           template:    'frontend/previews/generate_pdf.html.erb',
-                           layout:      'pdf.html'
-                end
+                format.pdf { send_cv_template_pdf }
             end
         end
 
@@ -26,6 +22,15 @@ module Frontend
 
         def set_cv_template
             @cv_template = @user.cv_templates.find(params[:cv_template_id])
+        end
+
+        def send_cv_template_pdf
+            @cv_template_pdf = CvTemplatePdf.new(@cv_template)
+
+            send_file(@cv_template_pdf.to_pdf,
+                      filename: @cv_template_pdf.filename,
+                      type: 'application/pdf',
+                      disposition: 'inline')
         end
     end
 end

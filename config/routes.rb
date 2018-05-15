@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     end
 
     scope module: 'frontend' do
-        get 'preview/:cv_template_id', to: 'previews#show', as: 'cv_template_preview'
-        get 'generate_pdf/:cv_template_id', to: 'previews#generate_pdf', as: 'cv_template_generate_pdf'
+        get 'previews/:cv_template_id', to: 'previews#show', as: 'cv_template_preview'
+        get 'previews/:cv_template_id/download', to: 'previews#download', as: 'cv_template_download'
 
         resources :images
         resources :cv_templates do
