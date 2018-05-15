@@ -15,15 +15,7 @@
         <%= csrf_meta_tags %>
 
         <style>
-            <%=
-                if Rails.env.production?
-                   manifest = Rails.application.assets_manifest
-                   path = File.join(manifest.dir, manifest.assets['print.scss'])
-                   File.read(path)
-               else
-                   Rails.application.assets.find_asset('print.scss').to_s.html_safe
-               end
-            %>
+            <%= Rails.application.assets.find_asset('print.scss').to_s.html_safe %>
         </style>
     </head>
 
