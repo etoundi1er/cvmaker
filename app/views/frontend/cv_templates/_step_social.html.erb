@@ -7,7 +7,7 @@
                 </tr>
             <% end %>
         <% else %>
-            <tr><%= render 'frontend/social_networks/form', social_network: @user.educations.new(cv_template: @cv_template) %></tr>
+            <tr><%= render 'frontend/social_networks/form', social_network: @user.social_networks.new(cv_template: @cv_template) %></tr>
         <% end %>
     </tbody>
     <tbody>

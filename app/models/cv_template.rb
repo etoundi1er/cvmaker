@@ -10,9 +10,17 @@ class CvTemplate < ApplicationRecord
     has_many :social_networks, dependent: :destroy
     has_many :skills, dependent: :destroy
 
+    after_initialize :set_basics
+
     validates :title, presence: true, uniqueness: { scope: :user_id }
 
     def fullname
         "#{firstname} #{lastname}".strip
+    end
+
+    private
+
+    def set_basics
+        self.title = title.presence || Time.zone.today.strftime("%B %Y CV #{CvTemplate.count + 1}")
     end
 end
