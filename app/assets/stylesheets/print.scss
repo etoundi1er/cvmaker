@@ -237,8 +237,13 @@ $color-primary: #2776aa;
 @media screen {
     .template-default {
         padding: 5em;
+        margin-bottom: 5em;
         width: 210mm;
         min-height: 270mm;
+
+        .col-right, .col-left {
+            margin-bottom: 5em;
+        }
     }
 
     .preview {

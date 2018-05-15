@@ -9,7 +9,7 @@ class CvTemplatePdf
 
     def to_pdf
         kit = PDFKit.new(as_html, page_size: 'A4', print_media_type: true)
-        kit.to_file(Rails.root.join('public', "cv-maker-#{@cv_template.title.parameterize}.pdf"))
+        kit.to_file(Rails.root.join('public', 'cv_maker.pdf'))
     end
 
     def filename
