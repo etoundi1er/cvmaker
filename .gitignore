@@ -16,3 +16,4 @@
 
 .byebug_history
 /config/application.yml
+/public/cv_maker.pdf
