@@ -8,5 +8,5 @@
 
 User.find_each(batch_size: 100) do |user|
     next if user.cv_templates.find_by(title: 'Example CV')
-    Concerns::DummyData.new(self).create_data
+    Concerns::DummyData.new(user).create_data
 end
