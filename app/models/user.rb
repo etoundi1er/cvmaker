@@ -10,4 +10,10 @@ class User < ApplicationRecord
     has_many :recommendations, dependent: :destroy
     has_many :social_networks, dependent: :destroy
     has_many :skills, dependent: :destroy
+
+    after_commit :create_dummy_cv, on: :create
+
+    def create_dummy_cv
+        Concerns::DummyData.new(self).create_data
+    end
 end

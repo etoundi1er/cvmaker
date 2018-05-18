@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.find_each(batch_size: 100) do |user|
+    next if user.cv_templates.find_by(title: 'Example CV')
+    Concerns::DummyData.new(self).create_data
+end
