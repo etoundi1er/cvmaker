@@ -9,11 +9,11 @@ Rails.application.routes.draw do
         get 'previews/:cv_template_id/download', to: 'previews#download', as: 'cv_template_download'
 
         get 'admin', to: 'admins#index'
-        get 'admin/user/:id', to: 'admins#show_user', as: 'admin_show_user'
         delete 'admin/user/:id', to: 'admins#destroy_user', as: 'admin_destroy_user'
+        post 'admin/login_as_user/:id', to: 'admins#login_as_user', as: 'admin_login_as_user'
 
         resources :images
-        resources :cv_templates do
+        resources :cv_templates, except: :show do
             member do
                 post 'sort'
             end

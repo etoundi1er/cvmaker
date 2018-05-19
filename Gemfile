@@ -32,6 +32,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'aws-sdk', '~> 2'
+gem 'will_paginate-bootstrap4'
 
 gem 'bootstrap', '~> 4.1.0'
 gem 'devise'

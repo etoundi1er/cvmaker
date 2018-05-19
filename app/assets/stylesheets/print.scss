@@ -3,52 +3,40 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
-  src: url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.eot'); /* IE9 Compat Modes */
   src: local('Roboto Thin'), local('Roboto-Thin'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* roboto-300 - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.eot'); /* IE9 Compat Modes */
   src: local('Roboto Light'), local('Roboto-Light'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Roboto'), local('Roboto-Regular'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* roboto-700 - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.eot'); /* IE9 Compat Modes */
   src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
        url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
+       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 $color-primary: #2776aa;

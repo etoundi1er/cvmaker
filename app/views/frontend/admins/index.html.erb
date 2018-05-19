@@ -1,58 +1,113 @@
 <div class="row">
     <div class="col-12">
-        <h5>Users <span class="badge badge-primary"><%= @users.size %></span></h5>
-
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">CVs</th>
-                    <th scope="col">Last Sign In</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @users.each do |user| %>
-                    <tr>
-                        <th scope="row"><%= user.id %></th>
-                        <td><%= link_to user.name, admin_show_user_path(user) %></td>
-                        <td><%= user.email %></td>
-                        <td><%= user.cv_templates.size %></td>
-                        <td><%= format_time user.last_sign_in_at, true %></td>
-                        <td><%= format_time user.created_at, true %></td>
-                        <td><%= link_to 'Delete', admin_destroy_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    </tr>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <%= link_to admin_path(section: 'users'), class: "nav-link #{'active' if params[:section].blank? || params[:section] == 'users'}" do %>
+                    Users <span class="badge badge-light"><%= @users.try(:size) %></span>
                 <% end %>
-            </tbody>
-        </table>
+            </li>
+            <li class="nav-item">
+                <%= link_to admin_path(section: 'cv_templates'), class: "nav-link #{'active' if params[:section] == 'cv_templates'}" do %>
+                    CVs <span class="badge badge-light"><%= @cv_templates.try(:size) %></span>
+                <% end %>
+            </li>
+            <li class="nav-item">
+                <%= link_to admin_path(section: 'images'), class: "nav-link #{'active' if params[:section] == 'images'}" do %>
+                    Images <span class="badge badge-light"><%= @images.try(:size) %></span>
+                <% end %>
+            </li>
+        </ul>
     </div>
 
-    <div class="col-12 mt-5">
-        <h5>CVs <span class="badge badge-primary"><%= @cv_templates.size %></span></h5>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">User</th>
-                    <th scope="col">Last Updated</th>
-                    <th scope="col">Created At</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @cv_templates.each do |cv_template| %>
+    <% if params[:section].blank? || params[:section] == 'users' %>
+        <div class="col-12 mt-5">
+            <h5>Users <span class="badge badge-primary"><%= @users.size %></span></h5>
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <th scope="row"><%= cv_template.id %></th>
-                        <td><%= cv_template.title %></td>
-                        <td><%= link_to cv_template.user.name, admin_show_user_path(cv_template.user) %></td>
-                        <td><%= format_time cv_template.updated_at, true %></td>
-                        <td><%= format_time cv_template.created_at, true %></td>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">CVs</th>
+                        <th scope="col">Last Sign In</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <th scope="row"><%= user.id %></th>
+                            <td><%= user.name %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.cv_templates.size %></td>
+                            <td><%= format_time user.last_sign_in_at, true %></td>
+                            <td><%= format_time user.created_at, true %></td>
+                            <td><%= link_to 'Login as user', admin_login_as_user_path(user), method: :post, data: { confirm: 'Login as this user? You will be logged out too.' } %></td>
+                            <td><%= link_to 'Delete', admin_destroy_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <%= will_paginate @users, name: 'page_users', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+
+    <% elsif params[:section] == 'cv_templates' %>
+        <div class="col-12 mt-5">
+            <h5>CVs <span class="badge badge-primary"><%= @cv_templates.size %></span></h5>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Last Updated</th>
+                        <th scope="col">Created At</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @cv_templates.each do |cv_template| %>
+                        <tr>
+                            <th scope="row"><%= cv_template.id %></th>
+                            <td><%= cv_template.title %></td>
+                            <td><%= link_to cv_template.user.name, admin_show_user_path(cv_template.user) %></td>
+                            <td><%= format_time cv_template.updated_at, true %></td>
+                            <td><%= format_time cv_template.created_at, true %></td>
+                            <td><%= link_to 'View as user', admin_login_as_user_path(cv_template.user), method: :post, data: { confirm: 'Login as this user? You will be logged out too.' } %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <%= will_paginate @cv_templates, name: 'page_cv_templates', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+
+    <% elsif params[:section] == 'images' %>
+        <div class="col-12 mt-5">
+            <h5>Images <span class="badge badge-primary"><%= @images.size %></span></h5>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @images.each do |image| %>
+                        <tr>
+                            <th scope="row"><%= image.id %></th>
+                            <td><%= link_to image.image_identifier, image.image_url %></td>
+                            <td><%= link_to image.user.name, admin_show_user_path(image.user) %></td>
+                            <td><%= format_time image.created_at, true %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <%= will_paginate @images, name: 'page_images', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+    <% end %>
+
 </div>

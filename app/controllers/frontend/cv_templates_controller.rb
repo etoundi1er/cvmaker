@@ -7,8 +7,6 @@ module Frontend
             @cv_templates = @user.cv_templates.all
         end
 
-        def show; end
-
         def edit; end
 
         def new

@@ -3,65 +3,50 @@
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 100;
-  src: asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.eot'); // IE9 Compat Modes
   src: local('IBM Plex Serif Thin'), local('IBMPlexSerif-Thin'),
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.woff') format('woff'), // Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-100.svg#IBMPlexSerif') format('svg'); // Legacy iOS
 }
 // ibm-plex-serif-200 - latin-ext_cyrillic-ext_vietnamese
 @font-face {
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 200;
-  src: asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.eot'); // IE9 Compat Modes
   src: local('IBM Plex Serif ExtraLight'), local('IBMPlexSerif-ExtraLight'),
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.woff') format('woff'), // Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-200.svg#IBMPlexSerif') format('svg'); // Legacy iOS
 }
 // ibm-plex-serif-300 - latin-ext_cyrillic-ext_vietnamese
 @font-face {
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 300;
-  src: asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.eot'); // IE9 Compat Modes
   src: local('IBM Plex Serif Light'), local('IBMPlexSerif-Light'),
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.woff') format('woff'), // Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-300.svg#IBMPlexSerif') format('svg'); // Legacy iOS
 }
 // ibm-plex-serif-regular - latin-ext_cyrillic-ext_vietnamese
 @font-face {
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 400;
-  src: asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.eot'); // IE9 Compat Modes
   src: local('IBM Plex Serif'), local('IBMPlexSerif'),
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.woff') format('woff'), // Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-regular.svg#IBMPlexSerif') format('svg'); // Legacy iOS
 }
 // ibm-plex-serif-500 - latin-ext_cyrillic-ext_vietnamese
 @font-face {
   font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 500;
-  src: asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.eot'); // IE9 Compat Modes
   src: local('IBM Plex Serif Medium'), local('IBMPlexSerif-Medium'),
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.woff') format('woff'), // Modern Browsers
        asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/ibm-plex-serif/ibm-plex-serif-v3-latin-ext_cyrillic-ext_vietnamese-500.svg#IBMPlexSerif') format('svg'); // Legacy iOS
 }
 
 // roboto-300 - latin-ext_cyrillic-ext_latin_vietnamese
@@ -69,39 +54,30 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.eot'); // IE9 Compat Modes
   src: local('Roboto Light'), local('Roboto-Light'),
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.woff') format('woff'), // Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-300.svg#Roboto') format('svg'); // Legacy iOS
 }
 // roboto-regular - latin-ext_cyrillic-ext_latin_vietnamese
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.eot'); // IE9 Compat Modes
   src: local('Roboto'), local('Roboto-Regular'),
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.woff') format('woff'), // Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-regular.svg#Roboto') format('svg'); // Legacy iOS
 }
 // roboto-700 - latin-ext_cyrillic-ext_latin_vietnamese
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.eot'); // IE9 Compat Modes
   src: local('Roboto Bold'), local('Roboto-Bold'),
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.eot?#iefix') format('embedded-opentype'), // IE6-IE8
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.woff2') format('woff2'), // Super Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.woff') format('woff'), // Modern Browsers
        asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.ttf') format('truetype'), // Safari, Android, iOS
-       asset-url('fonts/roboto/roboto-v18-latin-ext_cyrillic-ext_latin_vietnamese-700.svg#Roboto') format('svg'); // Legacy iOS
 }
 
 .serif-font-light {
