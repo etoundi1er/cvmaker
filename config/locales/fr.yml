@@ -1,0 +1,64 @@
+fr:
+  activerecord:
+    attributes:
+      user:
+        name: 'Nom'
+        email: 'E-Mail'
+      cv_template:
+        title: 'Titre'
+        description: 'Description'
+        firstname: 'Prénom'
+        lastname: 'Nom'
+        profession: 'Profession'
+        phone: 'Telephone'
+        email: 'E-Mail'
+        website: 'Site Web'
+        address: 'Addresse'
+        summary: 'Résumé'
+      certification:
+        title: 'Titre'
+        company: 'Compagnie'
+        location: 'Location'
+        certification_date: 'Date de la certification'
+        summary: 'Résumé'
+      education:
+        courses: 'Études'
+        academy: 'Institution'
+        location: 'Location'
+        start_date: 'Début'
+        end_date: 'Fin'
+        summary: 'Résumé'
+      experience:
+        position: 'Position'
+        company: 'Compagnie'
+        location: 'Location'
+        start_date: 'Début'
+        end_date: 'Fin'
+        summary: 'Résumé'
+      image:
+        title: 'Titre'
+        image: 'Image'
+      interest:
+        name: 'Interet'
+      language:
+        name: 'Langue'
+        level: 'Niveau'
+      skill:
+        name: 'Connaissance'
+        level: 'Niveau'
+      recommendation:
+        name: 'Nom complet'
+        profession: 'Profession'
+        company: 'Compagnie'
+        phone: 'Telephone'
+        email: 'E-Mail'
+      social_network:
+        title: 'Nom du site'
+        url: 'Lien'
+        username: "Nom d'utilisateur"
+  errors:
+    messages:
+      max_size_error: 'doit etre moin de 5MB'
+  shared:
+    home: 'Acceuil'
+    edit: 'Modifier'

@@ -7,3 +7,6 @@ en:
   errors:
     messages:
       max_size_error: 'must be less than 5MB'
+  shared:
+    home: 'Home'
+    edit: 'Edit'

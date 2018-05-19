@@ -72,7 +72,7 @@
                         <tr>
                             <th scope="row"><%= cv_template.id %></th>
                             <td><%= cv_template.title %></td>
-                            <td><%= link_to cv_template.user.name, admin_show_user_path(cv_template.user) %></td>
+                            <td><%= cv_template.user.name %></td>
                             <td><%= format_time cv_template.updated_at, true %></td>
                             <td><%= format_time cv_template.created_at, true %></td>
                             <td><%= link_to 'View as user', admin_login_as_user_path(cv_template.user), method: :post, data: { confirm: 'Login as this user? You will be logged out too.' } %></td>
@@ -99,8 +99,12 @@
                     <% @images.each do |image| %>
                         <tr>
                             <th scope="row"><%= image.id %></th>
-                            <td><%= link_to image.image_identifier, image.image_url %></td>
-                            <td><%= link_to image.user.name, admin_show_user_path(image.user) %></td>
+                            <td>
+                                <%= link_to image.image_url do %>
+                                    <%= image_tag(image.image.thumb.url, style: 'width: 50px;') %>
+                                <% end %>
+                            </td>
+                            <td><%= image.user.name %></td>
                             <td><%= format_time image.created_at, true %></td>
                         </tr>
                     <% end %>
@@ -109,5 +113,4 @@
             <%= will_paginate @images, name: 'page_images', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
         </div>
     <% end %>
-
 </div>

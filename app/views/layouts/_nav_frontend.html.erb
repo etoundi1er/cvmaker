@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-        <a class="navbar-brand text-light" href="/">
+        <%= link_to root_path, class: 'navbar-brand text-light' do %>
             <%= image_tag 'cv_maker_logo.png', width: 30, height: 30, class: 'CV Maker', class: 'd-inline-block align-top' %>
             CV Maker
-        </a>
+        <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

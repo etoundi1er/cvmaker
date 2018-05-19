@@ -1,6 +1,6 @@
 <%= content_for :breadcrumb do %>
-    <%= bc_link 'Home', root_path %>
-    <%= bc_link 'Edit CV' %>
+    <%= bc_link t('shared.home'), root_path %>
+    <%= bc_link t('shared.edit') %>
 <% end %>
 
 <div class="row">
@@ -8,7 +8,6 @@
         <%= render 'edit_submenu' %>
     </div>
     <div class="col-sm-8">
-        <div class="p-3 mb-2 bg-warning text-dark">Warining: you are editing a CV by <%= @user.name %>.</div>
         <div class="js-flash-notice"></div>
         <%= render params[:step].present? ? "step_#{params[:step]}" : 'step_basics' %>
     </div>
