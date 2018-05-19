@@ -10,6 +10,7 @@ class User < ApplicationRecord
     has_many :recommendations, dependent: :destroy
     has_many :social_networks, dependent: :destroy
     has_many :skills, dependent: :destroy
+    has_many :interests, dependent: :destroy
 
     after_commit :create_dummy_cv, on: :create
 

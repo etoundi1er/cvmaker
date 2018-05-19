@@ -4,7 +4,7 @@
             <div class="entry">
                 <h2><%= cv_template.fullname %></h2>
                 <h2 class="subtitle"><%= cv_template.profession %></h2>
-                <p><%= cv_template.summary %></p>
+                <p style="font-family: Palatino, Georgia, Times;"><%= cv_template.summary %></p>
             </div>
         </div>
 
@@ -23,8 +23,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= experience.position %></p>
-                            <p class="subtitle"><%= experience.company %>, <%= experience.location %></p>
-                            <div class="summary">
+                            <p class="subtitle" style="font-family: Palatino, Georgia, Times;"><%= experience.company %>, <%= experience.location %></p>
+                            <div class="summary" style="font-family: Palatino, Georgia, Times;">
                                 <%= raw experience.summary %>
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= education.courses %></p>
-                            <p class="subtitle"><%= education.academy %>, <%= education.location %></p>
-                            <div class="summary">
+                            <p class="subtitle" style="font-family: Palatino, Georgia, Times;"><%= education.academy %>, <%= education.location %></p>
+                            <div class="summary" style="font-family: Palatino, Georgia, Times;">
                                 <%= raw education.summary %>
                             </div>
                         </div>
@@ -69,8 +69,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= certification.title %></p>
-                            <p class="subtitle"><%= certification.company %>, <%= certification.location %></p>
-                            <div class="summary">
+                            <p class="subtitle" style="font-family: Palatino, Georgia, Times;"><%= certification.company %>, <%= certification.location %></p>
+                            <div class="summary" style="font-family: Palatino, Georgia, Times;">
                                 <%= raw certification.summary %>
                             </div>
                         </div>
@@ -90,12 +90,29 @@
                         <div class="time blank"></div>
                         <div class="body">
                             <p class="title"><%= recommendation.name %></p>
-                            <p class="subtitle">
+                            <p class="subtitle" style="font-family: Palatino, Georgia, Times;">
                                 <%= recommendation.profession_and_company %>
                             </p>
-                            <div class="summary">
+                            <div class="summary" style="font-family: Palatino, Georgia, Times;">
                                 <%= recommendation.phone_and_email.presence %>
                             </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+
+            <% if cv_template.interests.any? %>
+                <div class="entry">
+                    <div class="time section-block"></div>
+                    <div class="section">
+                        <h3>Interests</h3>
+                    </div>
+                </div>
+                <% cv_template.interests.each do |interests| %>
+                    <div class="entry">
+                        <div class="time blank"></div>
+                        <div class="body">
+                            <p class="title"><%= interests.name %></p>
                         </div>
                     </div>
                 <% end %>

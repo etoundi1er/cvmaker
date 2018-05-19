@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180514063753) do
+ActiveRecord::Schema.define(version: 20180518203933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,17 @@ ActiveRecord::Schema.define(version: 20180514063753) do
     t.index ["user_id"], name: "index_images_on_user_id"
   end
 
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.integer "sorting"
+    t.bigint "cv_template_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cv_template_id"], name: "index_interests_on_cv_template_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "name"
     t.string "level"
@@ -162,4 +173,6 @@ ActiveRecord::Schema.define(version: 20180514063753) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "interests", "cv_templates"
+  add_foreign_key "interests", "users"
 end

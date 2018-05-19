@@ -9,6 +9,7 @@
         <li class="list-group-item list-group-item-action">Skills</li>
         <li class="list-group-item list-group-item-action">Languages</li>
         <li class="list-group-item list-group-item-action">Recommendations</li>
+        <li class="list-group-item list-group-item-action">Interests</li>
     <% else %>
         <%= link_to 'Basics', edit_cv_template_path(@cv_template, step: 'basics'), class: "list-group-item list-group-item-action #{'active' if params[:step].blank? || params[:step] == 'basics'}" %>
         <%= link_to 'Personal Data', edit_cv_template_path(@cv_template, step: 'personal'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'personal'}" %>
@@ -19,6 +20,7 @@
         <%= link_to 'Skills', edit_cv_template_path(@cv_template, step: 'skills'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'skills'}" %>
         <%= link_to 'Languages', edit_cv_template_path(@cv_template, step: 'languages'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'languages'}" %>
         <%= link_to 'Recommendations', edit_cv_template_path(@cv_template, step: 'recommendations'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'recommendations'}" %>
+        <%= link_to 'Interests', edit_cv_template_path(@cv_template, step: 'interests'), class: "list-group-item list-group-item-action #{'active' if params[:step] == 'interests'}" %>
     <% end %>
 </ul>
 

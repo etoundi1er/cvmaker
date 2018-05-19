@@ -9,26 +9,7 @@
     </div>
     <div class="col-sm-8">
         <div class="js-flash-notice"></div>
-        <% case params[:step] %>
-        <% when 'personal' %>
-            <%= render 'step_personal' %>
-        <% when 'social' %>
-            <%= render 'step_social' %>
-        <% when 'education' %>
-            <%= render 'step_education' %>
-        <% when 'experiences' %>
-            <%= render 'step_experiences' %>
-        <% when 'certifications' %>
-            <%= render 'step_certifications' %>
-        <% when 'skills' %>
-            <%= render 'step_skills' %>
-        <% when 'languages' %>
-            <%= render 'step_languages' %>
-        <% when 'recommendations' %>
-            <%= render 'step_recommendations' %>
-        <% else %>
-            <%= render 'step_basics' %>
-        <% end %>
+        <%= render params[:step].present? ? "step_#{params[:step]}" : 'step_basics' %>
     </div>
 </div>
 

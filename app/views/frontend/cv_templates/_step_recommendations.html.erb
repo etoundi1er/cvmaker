@@ -15,5 +15,5 @@
     </tbody>
 </table>
 
-<%= link_to 'Finish & Preview', cv_template_preview_path(@cv_template, step: params[:step]), class: 'btn btn-primary' %>
+<%= link_to 'Continue', edit_cv_template_path(@cv_template, step: 'interests'), class: 'btn btn-primary' %>
 <%= link_to 'Add more', new_cv_template_recommendation_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

@@ -209,5 +209,21 @@ module Concerns
                 level: 'Advanced'
             )
         end
+
+        def create_interests(cv_template = nil)
+            cv_template ||= @cv_template
+            @user.interests.create(
+                cv_template: cv_template,
+                name: 'Part time pirating on Grand Line'
+            )
+            @user.skills.create(
+                cv_template: cv_template,
+                name: 'Running on water'
+            )
+            @user.skills.create(
+                cv_template: cv_template,
+                name: 'Taking the red pill'
+            )
+        end
     end
 end

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
             resources :skills, except: %i[index edit show]
             resources :languages, except: %i[index edit show]
             resources :recommendations, except: %i[index edit show]
+            resources :interests, except: %i[index edit show]
         end
     end
 

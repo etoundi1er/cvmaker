@@ -1,0 +1,19 @@
+<table class="table table-with-form mb-4">
+    <tbody class="js-sortable" data-sort-url="<%= sort_cv_template_path(@cv_template) %>">
+        <% if @cv_template.interests.any? %>
+            <% @cv_template.interests.each do |interest| %>
+                <tr id="interest_<%= interest.id %>">
+                    <%= render 'frontend/interests/form', interest: interest %>
+                </tr>
+            <% end %>
+        <% else %>
+            <tr><%= render 'frontend/interests/form', interest: @user.interests.new(cv_template: @cv_template) %></tr>
+        <% end %>
+    </tbody>
+    <tbody>
+        <tr class="js-new-interest"></tr>
+    </tbody>
+</table>
+
+<%= link_to 'Finish & Preview', cv_template_preview_path(@cv_template, step: params[:step]), class: 'btn btn-primary' %>
+<%= link_to 'Add more', new_cv_template_interest_path(@cv_template), remote: true, class: 'btn btn-outline-primary' %>

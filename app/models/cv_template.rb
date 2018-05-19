@@ -9,6 +9,7 @@ class CvTemplate < ApplicationRecord
     has_many :recommendations, dependent: :destroy
     has_many :social_networks, dependent: :destroy
     has_many :skills, dependent: :destroy
+    has_many :interests, dependent: :destroy
 
     after_initialize :set_basics
 
