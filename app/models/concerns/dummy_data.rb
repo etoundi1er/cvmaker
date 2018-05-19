@@ -13,6 +13,7 @@ module Concerns
             create_recommendations
             create_social_networks
             create_skills
+            create_interests
         end
 
         def create_cv_template

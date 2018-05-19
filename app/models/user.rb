@@ -12,6 +12,8 @@ class User < ApplicationRecord
     has_many :skills, dependent: :destroy
     has_many :interests, dependent: :destroy
 
+    validates :email, presence: true, uniqueness: true
+
     after_commit :create_dummy_cv, on: :create
 
     def create_dummy_cv

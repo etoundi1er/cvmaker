@@ -8,6 +8,10 @@ Rails.application.routes.draw do
         get 'previews/:cv_template_id', to: 'previews#show', as: 'cv_template_preview'
         get 'previews/:cv_template_id/download', to: 'previews#download', as: 'cv_template_download'
 
+        get 'admin', to: 'admins#index'
+        get 'admin/user/:id', to: 'admins#show_user', as: 'admin_show_user'
+        delete 'admin/user/:id', to: 'admins#destroy_user', as: 'admin_destroy_user'
+
         resources :images
         resources :cv_templates do
             member do
