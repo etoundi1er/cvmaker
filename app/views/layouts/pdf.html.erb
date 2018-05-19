@@ -14,7 +14,7 @@
 
         <%= csrf_meta_tags %>
 
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Roboto:300,400,500,700" rel="stylesheet">
+        <%= render 'layouts/base64_fonts' %>
 
         <style>
             <%= Rails.application.assets.find_asset('print.scss').to_s.html_safe %>

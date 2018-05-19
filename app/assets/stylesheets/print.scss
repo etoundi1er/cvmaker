@@ -1,9 +1,10 @@
 $color-primary: #2776aa;
-$font-sans-serif: 'Roboto', NewCenturySchlbk, Helvetica, Arial, sans-serif;
-$font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
+// $font-sans-serif: 'Roboto', NewCenturySchlbk, Helvetica, Arial, sans-serif;
+// $font-serif: Palatino, Georgia, Times, serif !important;
 
 @media all {
     body {
+        font-family: 'robotoregular', NewCenturySchlbk, Helvetica, Arial, sans-serif;
         width: 100%;
         margin: 0;
         box-sizing: border-box;
@@ -36,20 +37,18 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
                     padding-left: 107px;
 
                     h2 {
-                        font-family: $font-sans-serif;
                         margin: 0;
 
                         &.subtitle {
                             font-size: 13px;
-                            font-weight: 300;
+                            font-family: 'robotolight';
                             margin-top: 5px;
                         }
                     }
 
                     p {
-                        font-family: $font-serif;
+                        font-family: 'robotolight';
                         font-size: 11px;
-                        font-style: italic;
                         line-height: 1.5em;
                     }
                 }
@@ -92,7 +91,6 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
 
                         h3 {
                             margin: 0 0 13px;
-                            font-family: $font-sans-serif;
                         }
                     }
 
@@ -103,7 +101,6 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
                         padding-right: 15px;
                         text-align: right;
                         position: relative;
-                        font-family: $font-sans-serif;
 
                         &:before {
                             content: '';
@@ -136,7 +133,7 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
                         span {
                             margin: 0;
                             font-size: 10px;
-                            font-weight: 300;
+                            font-family: 'robotolight';
                             color: #777777;
                         }
                     }
@@ -159,23 +156,17 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
                         page-break-inside: avoid;
 
                         p.title {
-                            font-family: $font-sans-serif;
                             margin-top: 0;
                             margin-bottom: 5px;
                         }
 
                         p.subtitle {
-                            font-family: $font-serif;
-                            font-weight: 400;
-                            margin: 0;
-                            font-weight: 200;
+                            font-family: 'robotolight';
                             font-size: 10px;
-                            font-style: italic;
+                            margin: 0;
                         }
 
                         .summary {
-                            font-family: $font-serif;
-                            font-weight: 400;
                             line-height: 1.6em;
                             font-size: 10px;
                             margin-top: 10px;
@@ -197,7 +188,6 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
 
         .col-left {
             width: 100%;
-            font-family: $font-sans-serif;
             max-width: 25%;
             float: right;
 
@@ -215,14 +205,13 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
                     margin-bottom: 1.5em;
 
                     dt {
-                        font-weight: 600;
+                        font-family: 'robotolight';
                         font-size: 9px;
                         margin-bottom: 0.2em;
                         color: #777777;
                     }
 
                     dd {
-                        font-weight: 200;
                         line-height: 1.2em;
                         font-size: 9px;
                         margin-left: 0;
@@ -289,7 +278,6 @@ $font-serif: 'IBM Plex Serif', Georgia, Times, serif !important;
         }
 
         .nav {
-            font-family: $font-sans-serif;
             vertical-align: middle;
             width: 100%;
             padding: 0.5em;
