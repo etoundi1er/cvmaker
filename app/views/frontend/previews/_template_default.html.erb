@@ -4,7 +4,7 @@
             <div class="entry">
                 <h2><%= cv_template.fullname %></h2>
                 <h2 class="subtitle"><%= cv_template.profession %></h2>
-                <p style="font-family: Georgia, Times;"><%= cv_template.summary %></p>
+                <p><%= cv_template.summary %></p>
             </div>
         </div>
 
@@ -23,8 +23,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= experience.position %></p>
-                            <p class="subtitle" style="font-family: Georgia, Times;"><%= experience.company %>, <%= experience.location %></p>
-                            <div class="summary" style="font-family: Georgia, Times;">
+                            <p class="subtitle"><%= experience.company %>, <%= experience.location %></p>
+                            <div class="summary">
                                 <%= raw experience.summary %>
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= education.courses %></p>
-                            <p class="subtitle" style="font-family: Georgia, Times;"><%= education.academy %>, <%= education.location %></p>
-                            <div class="summary" style="font-family: Georgia, Times;">
+                            <p class="subtitle"><%= education.academy %>, <%= education.location %></p>
+                            <div class="summary">
                                 <%= raw education.summary %>
                             </div>
                         </div>
@@ -69,8 +69,8 @@
                         </div>
                         <div class="body">
                             <p class="title"><%= certification.title %></p>
-                            <p class="subtitle" style="font-family: Georgia, Times;"><%= certification.company %>, <%= certification.location %></p>
-                            <div class="summary" style="font-family: Georgia, Times;">
+                            <p class="subtitle"><%= certification.company %>, <%= certification.location %></p>
+                            <div class="summary">
                                 <%= raw certification.summary %>
                             </div>
                         </div>
@@ -90,10 +90,10 @@
                         <div class="time blank"></div>
                         <div class="body">
                             <p class="title"><%= recommendation.name %></p>
-                            <p class="subtitle" style="font-family: Georgia, Times;">
+                            <p class="subtitle">
                                 <%= recommendation.profession_and_company %>
                             </p>
-                            <div class="summary" style="font-family: Georgia, Times;">
+                            <div class="summary">
                                 <%= recommendation.phone_and_email.presence %>
                             </div>
                         </div>
