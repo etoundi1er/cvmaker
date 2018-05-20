@@ -19,10 +19,10 @@ module Concerns
         def create_cv_template
             @cv_template = @user.cv_templates.create(
                 title: 'Example CV',
-                description: 'Example CV to help you visualise what your CVs will look like. Enjoy :)',
+                description: "Example CV to help you visualise what your CVs will look like. Enjoy :)',
                 summary: 'A curious, enthusiastic and creative human born in December 1991.
                 I have been working with passion in creating meaningful and
-                functional digital and print products for the past 4 years.',
+                functional digital and print products for the past #{Time.zone.today - 2010} years.",
                 firstname: 'Frank',
                 lastname: 'Etoundi',
                 profession: 'Software Developer',
@@ -109,15 +109,14 @@ module Concerns
                 location: 'London, United Kingdom',
                 start_date: '2010',
                 end_date: '2016',
-                summary: '<p>Worked with companies in various industries as <strong>graphic designer, software developer, UI/UX designer.</strong></p>
-                         These includes:
-                         <ul>
-                             <li>The Church of England (as a graphic designer)</li>
-                             <li>Dominion Design & Publishing (as a software developer, graphic designer & consultant)</li>
-                             <li>Coventry University (as graphic & motion designer for an environment protection campaign)</li>
-                             <li>Internviews (developed a job search portal & news site about interships)</li>
-                             <li>Afrique Enjeux (Business & Economy Magazine)</li>
-                         </ul>'
+                summary: '<div>Worked with companies in various industries as <strong>graphic designer, software developer, UI/UX designer.</strong>
+                        <br>These includes:</div>
+                        <ul>
+                            <li>The Church of England (graphic designer)</li>
+                            <li>Dominion Design &amp; Publishing (software developer &amp; graphic designer)</li>
+                            <li>Coventry University (graphic &amp; motion designer)</li>
+                            <li>Internviews (software developer)</li>
+                        </ul>'
             )
         end
 
