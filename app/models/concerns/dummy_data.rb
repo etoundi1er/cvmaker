@@ -22,7 +22,7 @@ module Concerns
                 description: "Example CV to help you visualise what your CVs will look like. Enjoy :)',
                 summary: 'A curious, enthusiastic and creative human born in December 1991.
                 I have been working with passion in creating meaningful and
-                functional digital and print products for the past #{Time.zone.today - 2010} years.",
+                functional digital and print products for the past #{Time.zone.today.year - 2010} years.",
                 firstname: 'Frank',
                 lastname: 'Etoundi',
                 profession: 'Software Developer',
@@ -63,6 +63,7 @@ module Concerns
                               <li>Service Oriented Architecture Mobile apps development (for Android)</li>
                               <li>UX Design</li>
                               <li>Responsive web development</li>
+                              <li>Machine Learning</li>
                           </ul>"
             )
 
@@ -109,8 +110,8 @@ module Concerns
                 location: 'London, United Kingdom',
                 start_date: '2010',
                 end_date: '2016',
-                summary: '<div>Worked with companies in various industries as <strong>graphic designer, software developer, UI/UX designer.</strong>
-                        <br>These includes:</div>
+                summary: '<p>Worked with companies in various industries as <strong>graphic designer, software developer, UI/UX designer.</strong></p>
+                        <p>These includes:</p>
                         <ul>
                             <li>The Church of England (graphic designer)</li>
                             <li>Dominion Design &amp; Publishing (software developer &amp; graphic designer)</li>
