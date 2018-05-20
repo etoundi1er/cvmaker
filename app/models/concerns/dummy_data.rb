@@ -63,7 +63,6 @@ module Concerns
                               <li>Service Oriented Architecture Mobile apps development (for Android)</li>
                               <li>UX Design</li>
                               <li>Responsive web development</li>
-                              <li>Machine Learning</li>
                           </ul>"
             )
 
