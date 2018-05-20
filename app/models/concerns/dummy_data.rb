@@ -99,7 +99,8 @@ module Concerns
                 position: 'Founder & CTO',
                 company: 'Orakura Ltd',
                 location: 'Yaounde, Cameroon',
-                start_date: '2015'
+                start_date: '2015',
+                summary: '<p>Orakura is a Software as a Service application for school management, administration and life.</p>'
             )
             @user.experiences.create(
                 cv_template: cv_template,
@@ -111,10 +112,11 @@ module Concerns
                 summary: '<p>Worked with companies in various industries as <strong>graphic designer, software developer, UI/UX designer.</strong></p>
                          These includes:
                          <ul>
-                             <li>The Church of England</li>
-                             <li>Dominion Design & Publishing</li>
-                             <li>Coventry University</li>
-                             <li>Internviews</li>
+                             <li>The Church of England (as a graphic designer)</li>
+                             <li>Dominion Design & Publishing (as a software developer, graphic designer & consultant)</li>
+                             <li>Coventry University (as graphic & motion designer for an environment protection campaign)</li>
+                             <li>Internviews (developed a job search portal & news site about interships)</li>
+                             <li>Afrique Enjeux (Business & Economy Magazine)</li>
                          </ul>'
             )
         end
