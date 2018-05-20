@@ -29,7 +29,8 @@ module Frontend
 
         def recreate_dummy_cvs
             CvTemplate.where('lower(title) = ?', 'example cv').destroy_all
-            User.all.each(&:create_dummy_cv)
+            CvTemplate.dummy_cv.try(:destroy)
+            Concerns::DummyData.new(current_user).create
             redirect_to admin_path(section: 'cv_templates'), notice: 'Example CVs recreated'
         end
 

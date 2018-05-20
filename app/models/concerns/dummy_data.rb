@@ -4,7 +4,7 @@ module Concerns
             @user = user
         end
 
-        def create_data
+        def create
             create_cv_template
             create_certifications
             create_educations
@@ -18,6 +18,7 @@ module Concerns
 
         def create_cv_template
             @cv_template = @user.cv_templates.create(
+                dummy: true,
                 title: 'Example CV',
                 description: 'Example CV to help you visualise what your CVs will look like. Enjoy :)',
                 summary: "A curious, enthusiastic and creative human born in December 1991.

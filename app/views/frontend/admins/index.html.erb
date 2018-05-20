@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <% @users.each do |user| %>
-                        <tr>
+                        <tr class="<%= 'bg-info text-white' if user.admin %>">
                             <th scope="row"><%= user.id %></th>
                             <td><%= user.name %></td>
                             <td><%= user.email %></td>
@@ -76,7 +76,7 @@
                 </thead>
                 <tbody>
                     <% @cv_templates.each do |cv_template| %>
-                        <tr>
+                        <tr class="<%= 'bg-info text-white' if cv_template.dummy %>">
                             <th scope="row"><%= cv_template.id %></th>
                             <td><%= cv_template.title %></td>
                             <td><%= cv_template.user.name %></td>

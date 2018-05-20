@@ -21,7 +21,11 @@ module Frontend
         end
 
         def set_cv_template
-            @cv_template = @user.cv_templates.find(params[:cv_template_id])
+            @cv_template = if params[:dummy_cv].present?
+                               CvTemplate.dummy_cv
+                           else
+                               @user.cv_templates.find(params[:cv_template_id])
+                           end
         end
 
         def send_cv_template_pdf

@@ -13,11 +13,4 @@ class User < ApplicationRecord
     has_many :interests, dependent: :destroy
 
     validates :email, presence: true, uniqueness: true
-
-    after_commit :create_dummy_cv, on: :create
-
-    def create_dummy_cv
-        Concerns::DummyData.new(self).create_data
-        true
-    end
 end

@@ -5,6 +5,7 @@ module Frontend
 
         def index
             @cv_templates = @user.cv_templates.all
+            @dummy_cv = CvTemplate.dummy_cv
         end
 
         def edit; end

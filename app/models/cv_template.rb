@@ -19,6 +19,10 @@ class CvTemplate < ApplicationRecord
         "#{firstname} #{lastname}".strip
     end
 
+    def self.dummy_cv
+        find_by(dummy: true)
+    end
+
     private
 
     def set_basics

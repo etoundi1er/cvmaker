@@ -1,6 +1,6 @@
 <div class="card cv-template">
     <div class="card-body">
-        <h5 class="card-title"><%= link_to cv_template.title, cv_template_path(cv_template) %></h5>
+        <h5 class="card-title"><%= link_to cv_template.title, edit_cv_template_path(cv_template) %></h5>
         <p class="card-text"><%= truncate cv_template.description, length: 150, omission: '...' %></p>
         <p class="card-text">
             <small class="text-muted">

@@ -49,6 +49,12 @@ html, body {
         &:hover {
             box-shadow: #e2e2e2 1px 1px 2px;
         }
+
+        &.dummy_cv {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
     }
 }
 
