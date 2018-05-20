@@ -34,4 +34,9 @@ Rails.application.routes.draw do
 
         root 'pages#index'
     end
+
+    unless Rails.env.development?
+        match '*path', via: %i[get post propfind options], to: 'pages#error_404'
+        match '/', via: %i[options post propfind options], to: 'pages#error_404'
+    end
 end

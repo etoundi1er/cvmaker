@@ -4,6 +4,49 @@ class ApplicationController < ActionController::Base
     before_action :set_marketing_scope
     before_action :set_locale
 
+    unless Rails.env.development?
+        rescue_from ActiveRecord::RecordNotFound do |exception|
+            Rails.logger.fatal "rescued from ActiveRecord::RecordNotFound -- exception: #{exception}"
+            if request.xhr?
+                render text: 'Not Found', status: 404
+            else
+                redirect_to :root, alert: 'Page Not Found'
+            end
+        end
+        rescue_from ActionController::UnknownFormat do |exception|
+            Rails.logger.fatal "rescued from ActionController::UnknownFormat -- exception: #{exception}"
+            if request.xhr?
+                render text: 'UnknownFormat', status: 406
+            else
+                render status: 406, template: 'pages/error_404.html'
+            end
+        end
+        # :nocov:
+        rescue_from ActionController::RoutingError do |exception|
+            Rails.logger.fatal "rescued from ActionController::RoutingError -- exception: #{exception}"
+            if request.xhr?
+                render text: 'RoutingError', status: 404
+            else
+                render status: 404, template: 'pages/error_404.html'
+            end
+        end
+        # :nocov:
+        rescue_from ActionController::InvalidCrossOriginRequest do |exception|
+            Rails.logger.fatal "rescued from ActionController::InvalidCrossOriginRequest -- exception: #{exception}"
+            self.response_body = nil
+            render status: 422, text: 'Invalid Request'
+        end
+
+        rescue_from ArgumentError do |exception|
+            Rails.logger.fatal "rescued from ArgumentError -- exception: #{exception}"
+            if request.xhr?
+                render text: 'ArgumentError', status: 500
+            else
+                render status: 500, template: 'pages/error_404.html'
+            end
+        end
+    end
+
     def default_url_options
         { locale: I18n.locale }
     end
