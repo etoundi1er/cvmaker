@@ -12,7 +12,7 @@ Rails.application.routes.draw do
             get 'admin', to: 'admins#index'
             delete 'admin/user/:id', to: 'admins#destroy_user', as: 'admin_destroy_user'
             post 'admin/login_as_user/:id', to: 'admins#login_as_user', as: 'admin_login_as_user'
-            post 'admin/recreate_dummy_cvs', to: 'admins#recreate_dummy_cvs'
+            post 'admin/recreate_dummy_cv', to: 'admins#recreate_dummy_cv'
 
             resources :images
             resources :cv_templates, except: :show do

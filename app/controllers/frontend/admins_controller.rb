@@ -27,11 +27,10 @@ module Frontend
             redirect_to root_url
         end
 
-        def recreate_dummy_cvs
-            CvTemplate.where('lower(title) = ?', 'example cv').destroy_all
+        def recreate_dummy_cv
             CvTemplate.dummy_cv.try(:destroy)
             Concerns::DummyData.new(current_user).create
-            redirect_to admin_path(section: 'cv_templates'), notice: 'Example CVs recreated'
+            redirect_to admin_path(section: 'cv_templates'), notice: 'Example CV recreated'
         end
 
         private

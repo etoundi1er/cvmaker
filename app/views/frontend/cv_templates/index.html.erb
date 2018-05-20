@@ -29,6 +29,12 @@
                         </h5>
                         <p class="card-text"><%= @dummy_cv.description %></p>
                         <% if current_user.admin? %>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    updated: <%= format_time @dummy_cv.updated_at %><br>
+                                    created: <%= format_time @dummy_cv.created_at %>
+                                </small>
+                            </p>
                             <%= link_to 'Edit', edit_cv_template_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
                             <%= link_to 'Preview', cv_template_preview_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
                         <% else %>

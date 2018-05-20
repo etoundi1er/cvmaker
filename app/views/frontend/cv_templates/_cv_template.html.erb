@@ -4,8 +4,8 @@
         <p class="card-text"><%= truncate cv_template.description, length: 150, omission: '...' %></p>
         <p class="card-text">
             <small class="text-muted">
-                last updated: <%= format_date cv_template.updated_at %><br>
-                created: <%= format_date cv_template.created_at %>
+                updated: <%= format_time cv_template.updated_at %><br>
+                created: <%= format_time cv_template.created_at %>
             </small>
         </p>
         <%= link_to 'Preview', cv_template_preview_path(cv_template), class: 'btn btn-sm btn-outline-primary' %>
