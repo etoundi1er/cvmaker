@@ -16,25 +16,27 @@
             <!-- User CVs -->
             <%= render partial: 'cv_template', collection: @cv_templates %>
             <!-- Dummy CV -->
-            <div class="card cv-template dummy_cv">
-                <div class="card-body">
-                    <h5 class="card-title">
+            <% if @dummy_cv %>
+                <div class="card cv-template dummy_cv">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <% if current_user.admin? %>
+                                <%= link_to @dummy_cv.title, edit_cv_template_path(@dummy_cv) %>
+                            <% else %>
+                                <%= @dummy_cv.title %>
+                                <span class="badge badge-info">Preview Only</span>
+                            <% end %>
+                        </h5>
+                        <p class="card-text"><%= @dummy_cv.description %></p>
                         <% if current_user.admin? %>
-                            <%= link_to @dummy_cv.title, edit_cv_template_path(@dummy_cv) %>
+                            <%= link_to 'Edit', edit_cv_template_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
+                            <%= link_to 'Preview', cv_template_preview_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
                         <% else %>
-                            <%= @dummy_cv.title %>
-                            <span class="badge badge-info">Preview Only</span>
+                            <%= link_to 'Preview PDF', cv_template_download_path(@dummy_cv, dummy_cv: true, format: :pdf), class: 'btn btn-sm btn-outline-primary' %>
                         <% end %>
-                    </h5>
-                    <p class="card-text"><%= @dummy_cv.description %></p>
-                    <% if current_user.admin? %>
-                        <%= link_to 'Edit', edit_cv_template_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
-                        <%= link_to 'Preview', cv_template_preview_path(@dummy_cv), class: 'btn btn-sm btn-outline-primary' %>
-                    <% else %>
-                        <%= link_to 'Preview PDF', cv_template_download_path(@dummy_cv, dummy_cv: true, format: :pdf), class: 'btn btn-sm btn-outline-primary' %>
-                    <% end %>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </div>
