@@ -19,8 +19,8 @@ module Concerns
         def create_cv_template
             @cv_template = @user.cv_templates.create(
                 title: 'Example CV',
-                description: "Example CV to help you visualise what your CVs will look like. Enjoy :)',
-                summary: 'A curious, enthusiastic and creative human born in December 1991.
+                description: 'Example CV to help you visualise what your CVs will look like. Enjoy :)',
+                summary: "A curious, enthusiastic and creative human born in December 1991.
                 I have been working with passion in creating meaningful and
                 functional digital and print products for the past #{Time.zone.today.year - 2010} years.",
                 firstname: 'Frank',
