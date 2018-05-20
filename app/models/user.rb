@@ -18,5 +18,6 @@ class User < ApplicationRecord
 
     def create_dummy_cv
         Concerns::DummyData.new(self).create_data
+        true
     end
 end

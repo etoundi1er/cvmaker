@@ -14,14 +14,23 @@ module Frontend
         end
 
         def destroy_user
-            @user = User.find(params[:user_id])
-            @user = User.find(params[:user_id])
-            @user.destroy
+            @user = User.find(params[:id])
+            if @user.destroy
+                redirect_to admin_path(section: 'users'), notice: "#{@user.name} destroyed."
+            else
+                redirect_to admin_path(section: 'users'), alert: @user.errors.full_messages.to_sentence
+            end
         end
 
         def login_as_user
             sign_in(:user, User.find(params[:id]), { bypass: true })
             redirect_to root_url
+        end
+
+        def recreate_dummy_cvs
+            CvTemplate.where('lower(title) = ?', 'example cv').destroy_all
+            User.all.each(&:create_dummy_cv)
+            redirect_to admin_path(section: 'cv_templates'), notice: 'Example CVs recreated'
         end
 
         private

@@ -217,11 +217,11 @@ module Concerns
                 cv_template: cv_template,
                 name: 'Part time pirating on Grand Line'
             )
-            @user.skills.create(
+            @user.interests.create(
                 cv_template: cv_template,
                 name: 'Running on water'
             )
-            @user.skills.create(
+            @user.interests.create(
                 cv_template: cv_template,
                 name: 'Taking the red pill'
             )
