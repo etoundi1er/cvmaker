@@ -1,51 +1,8 @@
-/* roboto-100 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-100.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-/* roboto-300 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-300.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-/* roboto-regular - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-regular.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-/* roboto-700 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('https://s3-eu-west-1.amazonaws.com/cvmaker/cvmaker/assets/fonts/Roboto/roboto-v18-latin-700.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-$color-primary: #2776aa;
-$font-sans-serif: 'Roboto', NewCenturySchlbk, Helvetica, Arial, sans-serif;
-// $font-serif: Palatino, Georgia, Times, serif !important;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @media all {
     body {
-        font-family: $font-sans-serif;
+        font-family: 'Roboto', Helvetica, Arial, sans-seriff;
         font-weight: 400;
         width: 100%;
         margin: 0;
@@ -302,18 +259,18 @@ $font-sans-serif: 'Roboto', NewCenturySchlbk, Helvetica, Arial, sans-serif;
             border-radius: 5px;
             padding: 0.8em;
             background: darken(#dedede, 3%);
-            color: $color-primary;
+            color: #2776aa;
 
             &:hover {
                 background: darken(#dedede, 7%);
             }
 
             &.btn-primary {
-                background: $color-primary;
+                background: #2776aa;
                 color: #ffffff;
 
                 &:hover {
-                    background: darken($color-primary, 5%);
+                    background: darken(#2776aa, 5%);
                 }
             }
         }
@@ -333,7 +290,7 @@ $font-sans-serif: 'Roboto', NewCenturySchlbk, Helvetica, Arial, sans-serif;
             h3 {
                 float: left;
                 margin: 12px 0;
-                color: $color-primary;
+                color: #2776aa;
             }
 
             .actions {
