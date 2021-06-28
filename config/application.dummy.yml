@@ -1,0 +1,17 @@
+development:
+  ADMIN_EMAIL: dummy
+  ADMIN_NAME: dummy
+  ADMIN_PASSWORD: dummy
+  AWS_ACCESS_KEY_ID: dummy
+  AWS_REGION: dummy
+  AWS_S3_BUCKET: dummy
+  AWS_SECRET_ACCESS_KEY: dummy
+
+test:
+  ADMIN_EMAIL: dummy
+  ADMIN_NAME: dummy
+  ADMIN_PASSWORD: dummy
+  AWS_ACCESS_KEY_ID: dummy
+  AWS_REGION: dummy
+  AWS_S3_BUCKET: dummy
+  AWS_SECRET_ACCESS_KEY: dummy

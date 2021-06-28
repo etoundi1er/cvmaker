@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 admin   = User.find_by(admin: true, email: ENV['ADMIN_EMAIL'])
-admin ||= User.create(admin: true, email: ENV['ADMIN_EMAIL'], name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PWD'], password_confirmation: ENV['ADMIN_PWD'])
+admin ||= User.create(admin: true, email: ENV['ADMIN_EMAIL'], name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASSWORD'], password_confirmation: ENV['ADMIN_PASSWORD'])
 
 Concerns::DummyData.new(admin).create
