@@ -60,8 +60,8 @@ html, body {
 
 // style devise errors
 #error_explanation {
-    @extend .alert;
-    @extend .alert-danger;
+    @extend .alert !optional;
+    @extend .alert-danger !optional;
 
     h2 {
         font-size: 1em;
