@@ -36,7 +36,7 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'fog-aws'
 gem 'aws-sdk-s3', require: false
 
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'will_paginate-bootstrap4'
 
 gem 'devise'
